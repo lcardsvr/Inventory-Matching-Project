@@ -10,9 +10,10 @@ The idea would be to load all the available information in a standardised format
 
 After all the discrepancies have been identified, these will be the input for a final report to remove or add the assets from the external records.
 Visualisations / Interactions can include and are not limited to:
-•	Discrepancies per asset type
-•	Discrepancies per State
-•	Leaflet map with asset types in Australia
-•	API that returns a list of changes to be submitted to the external entities.
+
+- Discrepancies per asset type
+- Discrepancies per State
+- Leaflet map with asset types in Australia
+- API that returns a list of changes to be submitted to the external entities.
 
 The internal database can pull information from around 1000 assets, and external entities per state can have up to 279 assets to compare to. There might be differences in the information available per state, so that will need to be considered.
