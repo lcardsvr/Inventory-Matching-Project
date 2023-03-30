@@ -1,0 +1,231 @@
+Sub IRA_Number()
+
+    Dim LastRow As Integer
+    
+    LastRow = 331
+    
+    Dim i As Integer
+    
+    Dim j As Integer
+    
+    i = 1
+    j = 0
+    
+    Do While i < 332
+    
+        If Cells(i, 1).Value = "IRA Apparatus ID" Then
+        
+            j = j + 1
+            
+        End If
+        
+        Cells(i, 3).Value = j
+        
+        i = i + 1
+    
+    Loop
+    
+    
+
+End Sub
+
+
+Sub SRS_Number()
+
+    Dim LastRow As Integer
+    
+    LastRow = 4485
+    
+    Dim i As Integer
+    
+    Dim j As Integer
+    
+    i = 1
+    j = 0
+    
+    Do While i < 4486
+    
+        If Cells(i, 1).Value = "SRS Substance ID" Then
+        
+            j = j + 1
+            
+        End If
+        
+        Cells(i, 3).Value = j
+        
+        i = i + 1
+    
+    Loop
+    
+
+
+End Sub
+
+
+Sub ira_to_db()
+    
+    Dim i As Integer
+    Dim j As Integer
+    Dim maxIra As Integer
+    
+    maxIra = 332
+    
+    i = 1
+    j = 2
+    
+    Do While i < maxIra + 1
+    
+        If Cells(i, 1).Value = "IRA Apparatus ID" Then
+            
+            Worksheets(2).Cells(j, 1).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Apparatus type" Then
+            
+            Worksheets(2).Cells(j, 2).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Manufacturer" Then
+            
+            Worksheets(2).Cells(j, 3).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Model" Then
+            
+            Worksheets(2).Cells(j, 4).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Serial number" Then
+            
+            Worksheets(2).Cells(j, 5).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Tube details" Then
+            
+            Worksheets(2).Cells(j, 6).Value = "No data"
+        ElseIf Cells(i, 1).Value = "Location (Storage)" Then
+            
+            Worksheets(2).Cells(j, 7).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Location (Use)" Then
+            
+            Worksheets(2).Cells(j, 8).Value = Cells(i, 2).Value
+        ElseIf Cells(i, 1).Value = "Location (Relocating to)" Then
+            
+            Worksheets(2).Cells(j, 9).Value = Cells(i, 2).Value
+        End If
+        
+        i = i + 1
+        
+        If Cells(i, 3).Value < Cells(i + 1, 3).Value Then
+            
+            j = j + 1
+            
+        End If
+        
+    
+    
+    Loop
+    
+    
+    
+End Sub
+
+
+
+Sub srs_to_db()
+    
+    Dim i As Integer
+    Dim j As Integer
+    Dim maxIra As Integer
+    
+    maxIra = 4485
+    
+    i = 1
+    j = 2
+    
+    Do While i < maxIra + 1
+    
+        If Cells(i, 1).Value = "SRS Substance ID" Then
+            
+            Worksheets(4).Cells(j, 1).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Radionuclide" Then
+            
+            Worksheets(4).Cells(j, 2).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Manufacturer" Then
+            
+            Worksheets(4).Cells(j, 3).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Model" Then
+            
+            Worksheets(4).Cells(j, 4).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Serial number" Then
+            
+            Worksheets(4).Cells(j, 5).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Physical form" Then
+            
+            Worksheets(4).Cells(j, 6).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Chemical form" Then
+            
+            Worksheets(4).Cells(j, 7).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Initial activity" Then
+            
+            Worksheets(4).Cells(j, 8).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Initial activity date" Then
+            
+            Worksheets(4).Cells(j, 9).Value = Cells(i, 2).Value
+    
+        ElseIf Cells(i, 1).Value = "Device ID" Then
+            
+            Worksheets(4).Cells(j, 10).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Device type" Then
+            
+            Worksheets(4).Cells(j, 11).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Device manufacturer" Then
+            
+            Worksheets(4).Cells(j, 12).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Device model" Then
+            
+            Worksheets(4).Cells(j, 13).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Device serial number" Then
+            
+            Worksheets(4).Cells(j, 14).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Location (Storage)" Then
+            
+            Worksheets(4).Cells(j, 15).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Location (Use)" Then
+            
+            Worksheets(4).Cells(j, 16).Value = Cells(i, 2).Value
+            
+        ElseIf Cells(i, 1).Value = "Location (Relocating to)" Then
+            
+            Worksheets(4).Cells(j, 17).Value = Cells(i, 2).Value
+            
+        End If
+        
+        i = i + 1
+        
+        If Cells(i, 3).Value < Cells(i + 1, 3).Value Then
+            
+            j = j + 1
+            
+        End If
+        
+    
+    
+    Loop
+    
+    
+    
+End Sub
+
+
+
