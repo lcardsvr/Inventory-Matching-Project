@@ -1,0 +1,30 @@
+﻿Model,Serial Number,Equipment Use,Location(s) on Premises,Current status / location,Business Line,In RMIS-NG,Comments,Comments_2
+BTX,BTX-348,XRD,Jandakot Facility,,WCM,No,GeoServices - registered but regulator requires generator serial number,
+PNG-AA,1013-51120,Logging,Jandakot Facility,,RPE,No,,
+PNG-AA,1090-50652,Logging,Jandakot Facility,,RPE,No,,
+PNG-AA,1468-51086,Logging,Jandakot Facility,,RPE,No,,
+PNG-AA,1177-52252,Logging,Jandakot Facility,,RPE,No,,
+PNG-BA,5074-51345,Logging,Jandakot Facility,,RPE,No,Not on Jandakot RMIS-NG - In Roma,
+PNG-BA,5107-51347,Logging,Jandakot Facility,,RPE,No,Not on Jandakot RMIS-NG - In Roma,
+PNG-CB ,8338-52071,Logging,Jandakot Facility,,WCM,No,,
+PNG-CB ,8399-51819,Logging,Jandakot Facility,,WCM,No,,
+PNG-CB ,8457-50787,Logging,Jandakot Facility,,WCM,No,,
+PNG-CB ,8596-52069,Logging,Jandakot Facility,,WCM,No,,
+PNG-CB ,8655-52118,Logging,Jandakot Facility,,WCM,No,,
+PNG-CB ,8768-52121,Logging,Jandakot Facility,,WCM,No,,
+PNG-CB ,8829-50563,Logging,Jandakot Facility,,WCM,No,,
+PNG-CB ,8840-50603,Logging,Jandakot Facility,,WCM,No,,
+PNG-CBH,8579-51686,Logging,Jandakot Facility,,WCM,No,,
+PNG-CBH,8864-50705,Logging,Jandakot Facility,,WCM,No,,
+PNG-GC,7072-50911,Logging,Jandakot Facility,,RPE,No,,
+SPECTROSCOUT,12109149,XRF,Jandakot Facility,,WCM,No,,
+SPECTROSCOUT,139942-01103,XRF,Jandakot Facility,,WCM,No,GeoServices - registered but regulator requires generator serial number,
+PNG-CB ,8956-51922,Logging,,,WCM,No,Incoming from Japan - Rx amendment sent 26-Apr-22,Amendments Sent to Add
+PNG-CB ,8426-52244,Logging,,,WCM,No,RX amendment sent 27-Apr-22,Amendments Sent to Add
+PNG-CB ,8955-51864,Logging,,,WCM,No,RX amendment sent 22-Dec-22,Amendments Sent to Add
+PNG-CB ,8319-50804,Logging,,,WCM,No,sent to AUSTLM(4-Nov-2019) return to AWATLM(29-Dec-2019),Amendments Sent to Add
+PNG-CBH,8292-51574,Logging,,,WCM,No,sent to AUSTLM(11-Aug-2020) return to AWATLM(23-Sep-2020)  ,Amendments Sent to Add
+PNG-CBH,8846-51713,Logging,,,WCM,No,Completed 10-May-22,Add Amendments Completed by Council but not changed on Reg
+PNG-CB ,8600-50811,Logging,,,WCM,No,Completed 10-May-22,Add Amendments Completed by Council but not changed on Reg
+PNG-CBH,8657-51712,Logging,,,WCM,No,Completed 10-May-22,Add Amendments Completed by Council but not changed on Reg
+PNG-CB ,8336-52076,Logging,,,WCM,No,Completed 01-Aug-21,Add Amendments Completed by Council but not changed on Reg

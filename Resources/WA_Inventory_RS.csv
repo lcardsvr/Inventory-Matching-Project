@@ -1,0 +1,154 @@
+﻿Source_N,Isotope,Quantity,Form,Purpose or Use,Manufacturer,Model,Serial Number,Location(s) on Premises,Current status / location,Business Line,In RMIS-NG,Comments
+1,H3,55.5 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-AA,1013-51120,Balcatta Facility,,RPE,Yes,
+2,Cs137,37 kBq,Sealed Solid,Calibration,Eckert & Ziegler,EQ-H343123,Q7-784,Jandakot,,WCM,No,"Missing in Qtrac
+Installed in Detector# 974058; currently in toolset DV6MC-AA-3126; DV6ME-AC-2913"
+3,Cs137,2.22kBq,Sealed Solid,Calibration,-,EQ-602-2174,P6-130,Jandakot,,WCM,No,Amendment to add sent to WA council 22-Jul-22
+4,Cs137,2.22kBq,Sealed Solid,Calibration,-,EQ-602-2174,P9-748,Jandakot,,WCM,No,Amendment to add sent to WA council 22-Jul-22
+5,Cs137,33.3kBq,Sealed Solid,Calibration,-,EQ-H619737,R5-597,Jandakot,,WCM,Yes,Amendment to add sent to WA council 22-Jul-22
+6,Cs137,33.3kBq,Sealed Solid,Calibration,-,EQ-H619737,Q4-408,Jandakot,,WCM,Yes,Amendment to add sent to WA council 22-Jul-22
+7,Na22,92.5 Bq,Sealed Solid,Calibration,Schlumberger,HNGS-CA,U7-909,Jandakot,,RPE,No,
+8,Na22,92.5 Bq,Sealed Solid,Calibration,Schlumberger,HNGS-CA,U7-910,Jandakot,,RPE,No,
+9,Am241,370 GBq,Sealed Solid,Gauge - logging,QSA Global,NSR-U,4Q349,Jandakot,,WCM,Yes,Amendment to add sent to WA council 6-May-22
+10,Cs137,63 GBq,Sealed Solid,Gauge - logging,QSA Global,GSR-ZC,A3373,Jandakot,RA Pit Area Jandakot,WCM,Yes,RS amendment to add sent on 29-Apr-2022
+11,Cs137,2.22 kBq,Sealed Solid,Gauge - logging,Eckert & Ziegler,EQ-602-2174,R6-173,Jandakot,,WCM,No,"Missing in Qtrac
+Installed in Detector# 975082; currently in toolset DV6MC-AA-3126; DV6ME-AC-2913"
+12,Cs137,63 GBq,Sealed Solid,Gauge - logging,QSA Global,GSR-Z,A3381,Jandakot,,WCM,Yes,Amendment to add sent to WA council 6-May-22
+13,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-CB,8600-50811,Jandakot,,WCM,Yes,
+14,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-CBH,8657-51712,Jandakot,,WCM,Yes,
+15,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-CB,8426-52244,Jandakot,,WCM,Yes,
+16,Cs137,2.22 kBq,Sealed Solid,Calibration,Eckert & Ziegler Isotope Product,EQ-602-2174,S4-393,Jandakot Facility,,WCM,Yes,
+17,Cs137,33.30 kBq,Sealed Solid,Calibration,Eckert & Ziegler Isotope Product,EQ-H619737,H4-088,Jandakot Facility,,WCM,Yes,
+18,Cs137,2.2 kBq,Sealed Solid,Calibration,Eckert & Ziegler,EQ-602-2174,T9-947,Jandakot Facility,,WCM,Yes,Amendment to add sent to WA council 2-Sep-22
+19,Cs137,33.30 kBq,Sealed Solid,Calibration,Eckert & Ziegler,EQ-H619737,T5-503,Jandakot Facility,,WCM,Yes,
+20,Cs137,33.30 kBq,Sealed Solid,Calibration,Eckert & Ziegler,EQ-H619737,T5-504,Jandakot Facility,,WCM,Yes,
+21,Cs137,2.22 kBq,Sealed Solid,Calibration,Eckert & Ziegler,EQ-602-2174,Q5-137,on road,Ensign 974,WCM,No,"Missing in Qtrac 
+Installed in Detector# 930379; Currently in toolset ADN4D-AA-E8297; ADN4E-AB-2028 - Backloading on 28th of Oct 2022"
+22,Cs137,33.30 kBq,Sealed Solid,Calibration,Eckert & Ziegler,EQ-H619737,S2-412,Jandakot Facility,,WCM,Yes,
+23,Cs137,2.22 kBq,Sealed Solid,Calibration,Eckert & Ziegler,EQ-602-2174,Q5-136,Jandakot Facility,,WCM,No,"Missing in Qtrac
+Installed in Detector# 930378; Currently in toolset ADN4D-BA-V1614; ADN4E-AB-2026"
+24,Cs137,33.30 kBq,Sealed Solid,Calibration,Eckert & Ziegler,EQ-H619737,R7-388,Jandakot Facility,,WCM,Yes,
+25,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,I3-488,Jandakot Facility,,WCM,Yes,
+26,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,J6-099,Jandakot Facility,,WCM,Yes,
+27,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,I7-405,Jandakot Facility,,WCM,Yes,
+28,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,I4-762,Jandakot Facility,,WCM,Yes,
+29,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,L6-423,Jandakot Facility,,WCM,Yes,
+30,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,103457,Jandakot Facility,,WCM,Yes,
+31,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,L2-493,Jandakot Facility,,WCM,Yes,
+32,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,98688,Jandakot Facility,,WCM,Yes,
+33,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,103352,China Facility,ASIA-CHG-CHBTLM,WCM,No,"In China, currently installed in Detector# 13276 - Need RS amendment"
+34,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,K9-275,Jandakot Facility,,WCM,Yes,
+35,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,I4-813,Jandakot Facility,,WCM,Yes,
+36,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,K1-276,Jandakot Facility,,WCM,Yes,
+37,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,J9-209,Jandakot Facility,,WCM,Yes,
+38,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,L6-436,Jandakot Facility,,WCM,Yes,
+39,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,L9-301,Jandakot Facility,,WCM,Yes,
+40,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,I3-448,Jandakot Facility,,WCM,Yes,
+41,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,I9-262,Jandakot Facility,,WCM,Yes,
+42,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,I3-454,Jandakot Facility,,WCM,Yes,
+43,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,I3-474,Jandakot Facility,,WCM,Yes,
+44,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,I8-953,Jandakot Facility,,WCM,Yes,
+45,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,I8-954,Jandakot Facility,,WCM,Yes,
+46,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,J5-179,Jandakot Facility,,WCM,Yes,
+47,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,K7-701,Jandakot Facility,Duplication,WCM,Yes,Duplication
+48,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,K7-701,Jandakot Facility,,WCM,Yes,
+49,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,K7-702,Jandakot Facility,,WCM,Yes,
+50,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,K7-703,Jandakot Facility,,WCM,Yes,
+51,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,I4-746,Jandakot Facility,,WCM,Yes,
+52,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,J7-617,Jandakot Facility,,WCM,Yes,
+53,Cs137,37 kBq,Sealed Solid,Calibration,-,EQ-H343123,I8-975,Jandakot Facility,,WCM,Yes,
+54,Cs137,33 kBq,Sealed Solid,Calibration,-,EQ-H619737,K5-520,Jandakot Facility,,WCM,Yes,
+55,Na22,92.5 Bq,Sealed Solid,Calibration,-,HNGS-CA 289 - STB-A3888,L7-361,Jandakot Facility,,RPE,No,is no longer at APG.
+56,Th232,111 kBq,Sealed Solid,Calibration,,GSR-D,(32/12),Jandakot Facility,,WCM,No,Sent for disposal
+57,Th232,111 kBq,Sealed Solid,Calibration,,GSR-D,32/13,Jandakot Facility,,WCM,No,Sent for disposal
+58,Th232,111 kBq,Sealed Solid,Calibration,-,GSR-D,24/68,Jandakot Facility,,WCM,Yes,
+59,Th232,111 kBq,Sealed Solid,Calibration,-,GSR-D,065-33,Jandakot Facility,,WCM,Yes,
+60,Th232,55.50 kBq,Sealed Solid,Calibration,EPS,GSR-Y,1234,Jandakot Facility,,RPE,Yes,
+61,Th232,55.50 kBq,Sealed Solid,Calibration,EPS,GSR-Y,12728,Jandakot Facility,,RPE,No,has been junked since 2015; not physically at Jandakot / APG.
+62,Th232,55.50 kBq,Sealed Solid,Calibration,EPS,GSR-Y,1738,Jandakot Facility,,RPE,No,has been junked since 2015; not physically at Jandakot / APG.
+63,Th232,55.50 kBq,Sealed Solid,Calibration,EPS,GSR-Y,43/67,Jandakot Facility,,RPE,Yes,
+64,Th232,55.50 kBq,Sealed Solid,Calibration,EPS,GSR-Y,45/67,Jandakot Facility,,RPE,Yes,
+65,Th232,55.50 kBq,Sealed Solid,Calibration,EPS,GSR-Y,56/67,Jandakot Facility,,RPE,Yes,
+66,Th232,55.50 kBq,Sealed Solid,Calibration,EPS,GSR-Y,60129,Jandakot Facility,,RPE,Yes,
+67,Th232,55.50 kBq,Sealed Solid,Calibration,NSSI,GSR-U,1128APG,Jandakot Facility,,RPE,Yes,
+68,Th232,55.50 kBq,Sealed Solid,Calibration,NSSI,GSR-U,1202D,Jandakot Facility,,RPE,Yes,
+69,Th232,55.50 kBq,Sealed Solid,Calibration,Areva,GSR-Y,074-16,Jandakot Facility,,RPE,Yes,
+70,Th232,111 kBq,Sealed Solid,Calibration,Cerca,GSR-D,065-30,Jandakot Facility,,WCM,Yes,
+71,Th232,111 kBq,Sealed Solid,Calibration,Cerca,GSR-D,16/10,Jandakot Facility,,WCM,Yes,
+72,Th232,55.50 kBq,Sealed Solid,Calibration,Cerca,GSR-Y,17/07,Jandakot Facility,,RPE,Yes,
+73,Th232,111 kBq,Sealed Solid,Calibration,-,GSR-D,24/17,Jandakot Facility,,WCM,Yes,
+74,Am241,555 GBq,Sealed Solid,Gauge - logging,-,NSR-M,Q1223,Jandakot Facility,,WCM,Yes,
+75,Am241,555 GBq,Sealed Solid,Gauge - logging,-,NSR-M,Q1220,Jandakot Facility,,WCM,Yes,
+76,Am241,278 GBq,Sealed Solid,Gauge - logging,QSA Global,NSR-T,Q1116,Jandakot Facility,,WCM,Yes,
+77,Am241,555 GBq,Sealed Solid,Gauge - logging,AEA Technology,NSR-M,Q1221,Jandakot Facility,,WCM,Yes,
+78,Am241,370 GBq,Sealed Solid,Gauge - logging,Gammatron,NSR-U,U034,Jandakot Facility,,WCM,Yes,
+79,Am241,592 GBq,Sealed Solid,Gauge - logging,Schlumberger,NSR-F,G5096,Jandakot Facility,,RPE,Yes,
+80,Am241,592 GBq,Sealed Solid,Gauge - logging,Schlumberger,NSR-F,G5135,Jandakot Facility,,RPE,Yes,
+81,Am241,592 GBq,Sealed Solid,Gauge - logging,Schlumberger,NSR-F,G5216,Jandakot Facility,,RPE,Yes,
+82,Am241,444 GBq,Sealed Solid,Gauge - logging,-,NSR-M,A265,Jandakot Facility,,WCM,Yes,
+83,Am241,370 GBq,Sealed Solid,Gauge - logging,-,NSR-U,Q1187,Jandakot Facility,,WCM,Yes,
+84,Am241,278 GBq,Sealed Solid,Gauge - logging,QSA,NSR-T,Q1157,Jandakot Facility,,WCM,Yes,
+85,Am241,592 GBq,Sealed Solid,Gauge - logging,-,NSR-FC,G5394,Jandakot Facility,,RPE,Yes,
+86,Am241,592 GBq,Sealed Solid,Gauge - logging,-,NSR-LB,G4022,Jandakot Facility,,RPE,Yes,
+87,Am241,370 GBq,Sealed Solid,Gauge - logging,-,NSR-U,Q1148,Jandakot Facility,,WCM,Yes,
+88,Am241,555 GBq,Sealed Solid,Gauge - logging,-,NSR-M,Q1337,Jandakot Facility,,WCM,Yes,
+89,Am241,370 GBq,Sealed Solid,Gauge - logging,QSA Global,NSR-U,Q1309,Jandakot Facility,,WCM,Yes,
+90,Cs137,7.73 GBq,Sealed Solid,Gauge - logging,RTI,DG01,1560CP,Jandakot Facility,,RPS,No,In RMIS NG as DG01-1560
+91,Cs137,7.33 GBq,Sealed Solid,Gauge - logging,RTI,DG01,1923CP,Jandakot Facility,,RPS,No,In RMIS NG as DG01-1923
+92,Cs137,58.50 GBq,Sealed Solid,Gauge - logging,AEA Technology,GSR-Z,A3538B,Jandakot Facility,,RPE,Yes,
+93,Cs137,63 GBq,Sealed Solid,Gauge - logging,QSA ,GSR-Z,A3268,Jandakot Facility,,WCM,Yes,
+94,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GSR-Z,A3242,Jandakot Facility,,WCM,Yes,
+95,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GSR-Z,A2878,Jandakot Facility,,WCM,Yes,
+96,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GSR-ZC,A3296,Jandakot Facility,,WCM,Yes,
+97,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GGLS-DA,A2504,Jandakot Facility,,WCM,Yes,
+98,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GGLS-DA,A2973,Jandakot Facility,,WCM,Yes,
+99,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GSR-Z,A3187,Jandakot Facility,,WCM,Yes,
+100,Cs137,63 GBq,Sealed Solid,Gauge - logging,AEA Technology,GSR-Z,A3131,Jandakot Facility,,WCM,Yes,
+101,Cs137,63 GBq,Sealed Solid,Gauge - logging,AEA Technology,GSR-Z,A2902,Jandakot Facility,,WCM,Yes,
+102,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GSR-Z,A3179,Jandakot Facility,,WCM,Yes,
+103,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GSR-Z,A3180,Jandakot Facility,,WCM,Yes,
+104,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GSR-Z,A2972,Jandakot Facility,,WCM,Yes,
+105,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GGLS-DA,A2843,Jandakot Facility,,WCM,Yes,
+106,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-AA,1090-50652,Jandakot Facility,,RPE,No,this PNG-AA has been sent back to HFE Houston for RAN 
+107,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-CB,8457-50787,Jandakot Facility,,WCM,Yes,
+108,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-AA,1468-51086,Jandakot Facility,,RPE,Yes,
+109,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-BA,5074-51345,Jandakot Facility,WL Roma base,RPE,Yes,Not on Jandakot RMIS-NG -- currently in WL Roma base
+110,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-BA,5107-51347,Jandakot Facility,WL Roma base,RPE,Yes,Not on Jandakot RMIS-NG -- currently in WL Roma base
+111,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-CB,8829-50563,Jandakot Facility,,WCM,Yes,
+112,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-CB,8840-50603,Jandakot Facility,,WCM,Yes,
+113,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-CBH,8579-51686,Jandakot Facility,,WCM,Yes,
+114,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-CBH,8864-50705,Jandakot Facility,,WCM,Yes,
+115,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-GC,7072-50911,Jandakot Facility,,RPE,No,this PNG-AA has been sent back to HFE Houston for RAN
+116,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-CB,8955-51864,Jandakot Facility,,WCM,Yes,Sent to Japan - RX Amendment sent 18-Oct-2022
+117,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-CB,8655-52118,Jandakot Facility,,WCM,Yes,
+118,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-CB,8768-52121,Jandakot Facility,,WCM,Yes,
+119,H3,55.50 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-AA,1177-52252,Jandakot Facility,,RPE,Yes,
+120,Th232,55.50 GBq,Sealed Solid,Calibration,NSSI,GSR-U,679,Obs Bay,,RPE,Yes,
+121,Th232,55.50 GBq,Sealed Solid,Calibration,NSSI,GSR-U,1279,Jandakot Facility,,RPE,Yes,
+122,Th232,55.50 GBq,Sealed Solid,Calibration,-,GSR-U,1733,Jandakot Facility,,RPE,Yes,
+123,Am241,592 GBq,Sealed Solid,Gauge - logging,-,NSR-F,2111,Jandakot Facility,,RPE,Yes,
+124,Am241,18.50 GBq,Sealed Solid,Gauge - logging,-,NSR-GB,2026,Jandakot Facility,,RPE,Yes,
+125,Am241,592 GBq,Sealed Solid,Gauge - logging,-,NSR-F,A1508,Jandakot Facility,,RPE,Yes,
+126,Am241,296 GBq,Sealed Solid,Gauge - logging,-,NSR-LB,G4044,Jandakot Facility,,RPE,Yes,
+127,Am241,18.50 GBq,Sealed Solid,Gauge - logging,-,NSR-GB,4292,Jandakot Facility,,RPE,Yes,
+128,Am241,18.50 GBq,Sealed Solid,Gauge - logging,-,NSR-GB,3486,Jandakot Facility,,RPE,Yes,
+129,Am241,592 GBq,Sealed Solid,Gauge - logging,-,NSR-F,2543,Jandakot Facility,,RPE,Yes,
+130,Ba133,370 MBq,Sealed Solid,Gauge - logging,-,VXBS-D,Ba133.017.16,Jandakot Facility,,RPI,Yes,source is currently located at Jandakot RA Pit 
+131,Ba133,370 MBq,Sealed Solid,Gauge - logging,-,VXBS-D,Ba133.075.16,Jandakot Facility,,RPI,Yes,
+132,Ba133,370 MBq,Sealed Solid,Gauge - logging,-,VXBS-D,Ba133.076.16,Jandakot Facility,,RPI,Yes,
+133,Cs137,61 GBq,Sealed Solid,Gauge - logging,-,GSR-J,A5605,Jandakot Facility,,RPE,Yes,
+134,Cs137,37 kBq,Sealed Solid,Gauge - logging,-,STB-A3916-Cs_1,T7-319,Jandakot Facility,,RPE,Yes,
+135,Cs137,37 kBq,Sealed Solid,Gauge - logging,-,STB-A3916-Cs_1,T8-426,Jandakot Facility,,RPE,Yes,
+136,Cs137,60.30 GBq,Sealed Solid,Gauge - logging,-,GGLS-CA,A2436,Jandakot Facility,,RPE,Yes,
+137,Cs137,66 GBq,Sealed Solid,Gauge - logging,-,GSR-J,A5661,Jandakot Facility,,RPE,Yes,
+138,Cs137,66 GBq,Sealed Solid,Gauge - logging,-,GSR-J,A5662,Jandakot Facility,,RPE,Yes,
+139,Cs137,60.70 GBq,Sealed Solid,Gauge - logging,-,GSR-J,3828,Jandakot Facility,,RPE,Yes,
+140,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GSR-Z,AJ1000,Jandakot Facility,,RPE,Yes,
+141,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GSR-J,A5055,Jandakot Facility,,RPE,Yes,
+142,Cs137,63 GBq,Sealed Solid,Gauge - logging,-,GSR-J,A5052,Jandakot Facility,,RPE,Yes,
+143,Cs137,63 GBq,Sealed Solid,Gauge - logging,AEA Technology,GSR-J,4752,Jandakot Facility,,RPE,No,source has been FMT to Japan ; 
+144,Cs137,63 GBq,Sealed Solid,Gauge - logging,AEA Technologies,GSR-J,4703,Jandakot Facility,,RPE,Yes,
+145,Cs137,63 GBq,Sealed Solid,Gauge - logging,QSA Global,GSR-J,3790,Jandakot Facility,,RPE,Yes,
+146,Cs137,63 GBq,Sealed Solid,Gauge - logging,QSA Global,GSR-J,3831,Jandakot Facility,,RPE,Yes,
+147,Cs137,63 GBq,Sealed Solid,Gauge - logging,AEA Technology,GSR-J,A5262,Jandakot Facility,,RPE,Yes,
+148,Cs137,7.77 GBq,Sealed Solid,Gauge - logging,RTI,DG01,1549CP,Jandakot Facility,,RPS,No,In RMIS NG as DG01-1549
+149,Cs137,7.40 GBq,Sealed Solid,Gauge - logging,RTI,DG01,1902CP,Jandakot Facility,,RPS,No,In RMIS NG as DG01-1902
