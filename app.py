@@ -175,6 +175,8 @@ def photocomp():
         PhotoComp_dict["BusinessLine"]=row.BusinessLine
         PhotoComp_dict["ComplianceIndicator"]=row.ConfirmationPhotoComplianceIndicator
         PhotoComp_dict["Count"]=row[5]
+        PhotoComp_dict["lat"]= getlat(row.Country)
+        PhotoComp_dict["lon"]= getlon(row.Country)
 
 
         PhotoComp_data_out.append(PhotoComp_dict)
@@ -214,6 +216,8 @@ def leaktestcomp():
         LeakTestComp_dict["BusinessLine"]=row.BusinessLine
         LeakTestComp_dict["ComplianceIndicator"]=row.LeakTestComplianceIndicator
         LeakTestComp_dict["Count"]=row[5]
+        LeakTestComp_dict["lat"]= getlat(row.Country)
+        LeakTestComp_dict["lon"]= getlon(row.Country)
 
         LeakTestComp_data_out.append(LeakTestComp_dict)
 
@@ -252,6 +256,8 @@ def calcomp():
         CalibrationComp_dict["BusinessLine"]=row.BusinessLine
         CalibrationComp_dict["ComplianceIndicator"]=row.CalibrationComplianceIndicator
         CalibrationComp_dict["Count"]=row[5]
+        CalibrationComp_dict["lat"]= getlat(row.Country)
+        CalibrationComp_dict["lon"]= getlon(row.Country)
 
         CalibrationComp_data_out.append(CalibrationComp_dict)
         
@@ -263,6 +269,70 @@ def calcomp():
 
     # return jsonify(CalibrationComp_data_out)
 
+
+def getlat(country):
+
+  ChinaCoord = [35.8617 , 104.1954 ]
+  IndonesiaCoord = [-0.7893, 113.9213]
+  AustraliaCoord = [-25.2744 , 133.7751]
+  JapanCoord = [36.2048 , 138.2529]
+  NZCoord = [-40.9006, 174.8860]
+  PNGCoord = [-6, 148]
+  TaiwanCoord = [23.6978, 120.9605]
+
+  if (country == 'China'):
+    return ChinaCoord[0]
+  
+  if (country == 'Indonesia'):
+    return IndonesiaCoord[0]
+  
+  if (country == 'Australia'):
+    return AustraliaCoord[0]
+ 
+  if (country == 'Japan'):
+    return JapanCoord[0]
+  
+  if (country == 'New Zealand'):
+    return NZCoord[0]
+  
+  if (country == 'Papua New Guinea'):
+    return PNGCoord[0]
+
+  if (country == 'Taiwan, Province Of China'):
+    return TaiwanCoord[0]
+
+
+
+def getlon(country):
+
+  ChinaCoord = [35.8617 , 104.1954 ]
+  IndonesiaCoord = [-0.7893, 113.9213]
+  AustraliaCoord = [-25.2744 , 133.7751]
+  JapanCoord = [36.2048 , 138.2529]
+  NZCoord = [-40.9006, 174.8860]
+  PNGCoord = [-6, 148]
+  TaiwanCoord = [23.6978, 120.9605]
+
+  if (country == 'China'):
+    return ChinaCoord[1]
+  
+  if (country == 'Indonesia'):
+    return IndonesiaCoord[1]
+  
+  if (country == 'Australia'):
+    return AustraliaCoord[1]
+ 
+  if (country == 'Japan'):
+    return JapanCoord[1]
+  
+  if (country == 'New Zealand'):
+    return NZCoord[1]
+  
+  if (country == 'Papua New Guinea'):
+    return PNGCoord[1]
+
+  if (country == 'Taiwan, Province Of China'):
+    return TaiwanCoord[1]
 
 
 # @app.route("/api/v1.0/stations")

@@ -100,8 +100,8 @@ function init() {
         "complianceCount" : 0,
         "criticalCount" : 0,
         "nonComplianceCount" : 0,
-        "latitude": 0,
-        "longitude": 0
+        "lat": 0,
+        "lon": 0
 
 
 
@@ -143,9 +143,9 @@ function init() {
             facilitiesDict[f].nonComplianceCount += element.Count;
           }  
           
-          facilitiesDict[f].latitude = getlat(facilitiesDict[f].country) ;
+          facilitiesDict[f].lat = getlat(facilitiesDict[f].country) ;
 
-          facilitiesDict[f].longitude= getlon(facilitiesDict[f].country);
+          facilitiesDict[f].lon= getlon(facilitiesDict[f].country);
           
         }
 
@@ -173,11 +173,40 @@ function init() {
     {name: 'Non Compliance', data: nonComplianceArray}];
 
 
-    console.log(seriesData);
+    // console.log(seriesData);
 
-    console.log(latlonDict);
+    // console.log(latlonDict);
 
-    console.log(latlonDict.China);
+    // console.log(latlonDict.China);
+
+    let locations = Object.keys(facilitiesDict);
+
+    let locInfo = Object.values(facilitiesDict);
+
+    locInfoJSON = JSON.stringify(locInfo,null,2);
+
+    // locInfoJSON = JSON.stringify(facilitiesDict,null,2);
+
+    console.log (locInfoJSON);
+
+    // createMarkers(locInfoJSON);
+
+    createMarkers(data);
+
+
+
+    // d3.json(locInfoJSON, function (datar){
+
+    //   console.log(datar);
+    // });
+
+   
+
+    // let locinfo2 = Object.values(locInfo);
+
+    // console.log(locinfo2);
+
+
 
     // let test = Array.from(complianceArray);
 
@@ -239,10 +268,10 @@ function init() {
     catArray = facilitiesArray ; 
 
 
-    // Perform an API call to the Citi Bike API to get the station information. Call createMarkers when it completes.
-    responseMap = d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json").then(createMarkers);
+    // // Perform an API call to the Citi Bike API to get the station information. Call createMarkers when it completes.
+    // responseMap = d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json").then(createMarkers);
 
-    console.log(responseMap.data);
+    // console.log(responseMap.data);
 
 
 
@@ -974,8 +1003,8 @@ function createMap(bikeStations) {
 
   // Create the map object with options.
   let map = L.map("bar", {
-    center: [40.73, -74.0059],
-    zoom: 12,
+    center: [0, 130],
+    zoom: 1,
     layers: [streetmap, bikeStations]
   });
 
@@ -987,26 +1016,53 @@ function createMap(bikeStations) {
 
 function createMarkers(response) {
 
+  // Creating the map object
+  let myMap = L.map("bar", {
+    center: [0, 130],
+    zoom: 2
+  });
+
+  // Adding the tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(myMap);
+
   // Pull the "stations" property from response.data.
-  let stations = response.data.stations;
+  // let stations = response.data.stations;
+  let stations = response;
+
+  // console.log(stations.length);
 
   // Initialize an array to hold bike markers.
   let bikeMarkers = [];
+
+  // Create a new marker cluster group.
+  let markers = L.markerClusterGroup();
 
   // Loop through the stations array.
   for (let index = 0; index < stations.length; index++) {
     let station = stations[index];
 
+    // console.log(station.Country);
+
+    // let lat = getlat(station.Country);   
+    // let lon = getlon(station.Country);
+
+    // console.log (station.lat);
+    // console.log (station.lon);
+
     // For each station, create a marker, and bind a popup with the station's name.
-    let bikeMarker = L.marker([station.lat, station.lon])
-      .bindPopup("<h3>" + station.name + "<h3><h3>Capacity: " + station.capacity + "</h3>");
+    markers.addLayer(L.marker([station.lat, station.lon])
+      .bindPopup("<h3>" + station.FacilityNamewithFacilityID + "<h3><h3>Compliance Indicator: " + station.ComplianceIndicator + "<h3><h3>Business Line: " + station.BusinessLine +"<h3><h3>Count: " + station.Count + "</h3>"));
 
     // Add the marker to the bikeMarkers array.
-    bikeMarkers.push(bikeMarker);
+    // bikeMarkers.push(bikeMarker);
   }
 
+  myMap.addLayer(markers);
+
   // Create a layer group that's made from the bike markers array, and pass it to the createMap function.
-  createMap(L.layerGroup(bikeMarkers));
+  // createMap(L.layerGroup(markers));
 }
 
 
