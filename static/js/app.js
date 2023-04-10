@@ -1,6 +1,6 @@
 //Sample data at URL Below
 
-let url = "http://127.0.0.1:5000/api/v1.0/calcomp";
+let url = "http://127.0.0.1:5000/api/v1.0/leaktestcomp";
 
 let facilitiesDict = {}
 
@@ -41,6 +41,8 @@ function init() {
 
     });
 
+    let facilitiesArray = Array.from(facilities);
+
     let compStatus  = new Set();
 
     data.forEach(element => {
@@ -48,6 +50,8 @@ function init() {
       compStatus.add(element.ComplianceIndicator);
 
     });
+
+    compStatusArray = Array.from(compStatus);
 
 
     let bussinessLine = new Set();
@@ -59,6 +63,26 @@ function init() {
 
     });
  
+   
+
+    let bussinessLineArray = Array.from(bussinessLine);
+
+    let latlonDict = [
+      {country : "China", latlon :[35.8617 , 104.1954 ]},
+      {country : "Indonesia", latlon :[-0.7893, 113.9213]},
+      {country : "Australia", latlon : [-25.2744 , 133.7751]},
+      {country : "Japan", latlon :[36.2048 , 138.2529]},
+      {country : "New Zealand", latlon :[-40.9006, 174.8860]},
+      {country : "Papua New Guinea", latlon :[-6, 148]},
+      {country : "Taiwan, Province Of China", latlon :[23.6978, 120.9605]}
+    ];
+
+
+    let complianceArray = [];
+    let nonComplianceArray = [];
+    let criticalArray = [];
+    let actionNeededArray = [];
+  
 
     facilities.forEach(f => {
 
@@ -72,6 +96,13 @@ function init() {
         "businessLine": "",
         "complianceIndicator": "",
         "compcount":  0,
+        "actionNeededCount" : 0,
+        "complianceCount" : 0,
+        "criticalCount" : 0,
+        "nonComplianceCount" : 0,
+        "latitude": 0,
+        "longitude": 0
+
 
 
       }
@@ -91,8 +122,31 @@ function init() {
 
           facilitiesDict[f].complianceIndicator = element.ComplianceIndicator;
 
-          facilitiesDict[f].compcount = element.Count;
+          facilitiesDict[f].compcount += element.Count;
 
+          if (element.ComplianceIndicator === 'Action Needed'){
+
+            facilitiesDict[f].actionNeededCount += element.Count;
+          }
+
+          if (element.ComplianceIndicator === 'Compliance'){
+
+            facilitiesDict[f].complianceCount += element.Count;
+          }
+
+          if (element.ComplianceIndicator === 'Critical'){
+
+            facilitiesDict[f].criticalCount += element.Count;
+          }
+          if (element.ComplianceIndicator === 'Non Compliance'){
+
+            facilitiesDict[f].nonComplianceCount += element.Count;
+          }  
+          
+          facilitiesDict[f].latitude = getlat(facilitiesDict[f].country) ;
+
+          facilitiesDict[f].longitude= getlon(facilitiesDict[f].country);
+          
         }
 
         
@@ -105,11 +159,37 @@ function init() {
 
       });
 
+      complianceArray.push(parseInt(facilitiesDict[f].complianceCount));
+      nonComplianceArray.push(parseInt(facilitiesDict[f].nonComplianceCount));
+      criticalArray.push(parseInt(facilitiesDict[f].criticalCount));
+      actionNeededArray.push(parseInt(facilitiesDict[f].actionNeededCount));
      
 
     });
 
+    let seriesData= [{name: 'Compliance', data: complianceArray },
+    {name: 'Action Needed', data: actionNeededArray },
+    {name: 'Critical', data: criticalArray},
+    {name: 'Non Compliance', data: nonComplianceArray}];
+
+
+    console.log(seriesData);
+
+    console.log(latlonDict);
+
+    console.log(latlonDict.China);
+
+    // let test = Array.from(complianceArray);
+
+    // console.log(test);
+
+    // console.log(nonComplianceArray);
+
+
     console.log(facilitiesDict);
+
+    // console.log(facilitiesDict.length);
+    // console.log(facilitiesDict.size);
 
     console.log(geounits);
 
@@ -117,9 +197,477 @@ function init() {
 
     console.log(facilities);
 
-    console.log(compStatus);
 
-    console.log(bussinessLine);
+
+
+    console.log(compStatusArray);
+
+    console.log(bussinessLineArray);
+
+
+    console.log(compStatusArray.length);
+
+    console.log(bussinessLineArray.length);
+
+    console.log(compStatusArray[0]);
+
+    console.log(compStatusArray[compStatusArray.length-1]);
+
+    console.log(bussinessLineArray[bussinessLineArray.length-1]);
+    
+
+
+    let catArray = ['2020/21', '2019/20', '2018/19', '2017/18', '2016/17'];
+
+    // let seriesData =  [{
+    //   name: 'Gabriela Soter',
+    //   data: [4, 4, 6, 15, 12]
+    //   }, {
+    //   name: 'Luis Cardenas',
+    //   data: [5, 3, 12, 6, 11]
+    //   }, {
+    //   name: 'Agatha Mendes',
+    //   data: [5, 15, 8, 5, 8]
+    //    }];
+
+
+    let chartTitle = compStatusArray[0];
+
+    let xaxisLabel = bussinessLineArray[bussinessLineArray.length-1];
+
+
+    catArray = facilitiesArray ; 
+
+
+    // Perform an API call to the Citi Bike API to get the station information. Call createMarkers when it completes.
+    responseMap = d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json").then(createMarkers);
+
+    console.log(responseMap.data);
+
+
+
+    // seriesData = createData (facilitiesDict);
+
+
+
+
+
+    Highcharts.chart('bubble', {
+      chart: {
+          type: 'bar'
+      },
+      title: {
+          text: chartTitle
+      },
+      xAxis: {
+          categories: catArray
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: xaxisLabel
+          }
+      },
+      legend: {
+          reversed: true
+      },
+      plotOptions: {
+          series: {
+              stacking: 'normal',
+              dataLabels: {
+                  enabled: true
+              }
+          }
+      },
+      series: seriesData
+  });
+
+
+  // Create the chart
+Highcharts.chart('gauge', {
+  chart: {
+      type: 'column'
+  },
+  title: {
+      align: 'left',
+      text: 'Browser market shares. January, 2022'
+  },
+  subtitle: {
+      align: 'left',
+      text: 'Click the columns to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+  },
+  accessibility: {
+      announceNewData: {
+          enabled: true
+      }
+  },
+  xAxis: {
+      type: 'category'
+  },
+  yAxis: {
+      title: {
+          text: 'Total percent market share'
+      }
+
+  },
+  legend: {
+      enabled: false
+  },
+  plotOptions: {
+      series: {
+          borderWidth: 0,
+          dataLabels: {
+              enabled: true,
+              format: '{point.y:.1f}%'
+          }
+      }
+  },
+
+  tooltip: {
+      headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+      pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+  },
+
+  series: [
+      {
+          name: 'Browsers',
+          colorByPoint: true,
+          data: [
+              {
+                  name: 'Chrome',
+                  y: 63.06,
+                  drilldown: 'Chrome'
+              },
+              {
+                  name: 'Safari',
+                  y: 19.84,
+                  drilldown: 'Safari'
+              },
+              {
+                  name: 'Firefox',
+                  y: 4.18,
+                  drilldown: 'Firefox'
+              },
+              {
+                  name: 'Edge',
+                  y: 4.12,
+                  drilldown: 'Edge'
+              },
+              {
+                  name: 'Opera',
+                  y: 2.33,
+                  drilldown: 'Opera'
+              },
+              {
+                  name: 'Internet Explorer',
+                  y: 0.45,
+                  drilldown: 'Internet Explorer'
+              },
+              {
+                  name: 'Other',
+                  y: 1.582,
+                  drilldown: null
+              }
+          ]
+      }
+  ],
+  drilldown: {
+      breadcrumbs: {
+          position: {
+              align: 'right'
+          }
+      },
+      series: [
+          {
+              name: 'Chrome',
+              id: 'Chrome',
+              data: [
+                  [
+                      'v65.0',
+                      0.1
+                  ],
+                  [
+                      'v64.0',
+                      1.3
+                  ],
+                  [
+                      'v63.0',
+                      53.02
+                  ],
+                  [
+                      'v62.0',
+                      1.4
+                  ],
+                  [
+                      'v61.0',
+                      0.88
+                  ],
+                  [
+                      'v60.0',
+                      0.56
+                  ],
+                  [
+                      'v59.0',
+                      0.45
+                  ],
+                  [
+                      'v58.0',
+                      0.49
+                  ],
+                  [
+                      'v57.0',
+                      0.32
+                  ],
+                  [
+                      'v56.0',
+                      0.29
+                  ],
+                  [
+                      'v55.0',
+                      0.79
+                  ],
+                  [
+                      'v54.0',
+                      0.18
+                  ],
+                  [
+                      'v51.0',
+                      0.13
+                  ],
+                  [
+                      'v49.0',
+                      2.16
+                  ],
+                  [
+                      'v48.0',
+                      0.13
+                  ],
+                  [
+                      'v47.0',
+                      0.11
+                  ],
+                  [
+                      'v43.0',
+                      0.17
+                  ],
+                  [
+                      'v29.0',
+                      0.26
+                  ]
+              ]
+          },
+          {
+              name: 'Firefox',
+              id: 'Firefox',
+              data: [
+                  [
+                      'v58.0',
+                      1.02
+                  ],
+                  [
+                      'v57.0',
+                      7.36
+                  ],
+                  [
+                      'v56.0',
+                      0.35
+                  ],
+                  [
+                      'v55.0',
+                      0.11
+                  ],
+                  [
+                      'v54.0',
+                      0.1
+                  ],
+                  [
+                      'v52.0',
+                      0.95
+                  ],
+                  [
+                      'v51.0',
+                      0.15
+                  ],
+                  [
+                      'v50.0',
+                      0.1
+                  ],
+                  [
+                      'v48.0',
+                      0.31
+                  ],
+                  [
+                      'v47.0',
+                      0.12
+                  ]
+              ]
+          },
+          {
+              name: 'Internet Explorer',
+              id: 'Internet Explorer',
+              data: [
+                  [
+                      'v11.0',
+                      6.2
+                  ],
+                  [
+                      'v10.0',
+                      0.29
+                  ],
+                  [
+                      'v9.0',
+                      0.27
+                  ],
+                  [
+                      'v8.0',
+                      0.47
+                  ]
+              ]
+          },
+          {
+              name: 'Safari',
+              id: 'Safari',
+              data: [
+                  [
+                      'v11.0',
+                      3.39
+                  ],
+                  [
+                      'v10.1',
+                      0.96
+                  ],
+                  [
+                      'v10.0',
+                      0.36
+                  ],
+                  [
+                      'v9.1',
+                      0.54
+                  ],
+                  [
+                      'v9.0',
+                      0.13
+                  ],
+                  [
+                      'v5.1',
+                      0.2
+                  ]
+              ]
+          },
+          {
+              name: 'Edge',
+              id: 'Edge',
+              data: [
+                  [
+                      'v16',
+                      2.6
+                  ],
+                  [
+                      'v15',
+                      0.92
+                  ],
+                  [
+                      'v14',
+                      0.4
+                  ],
+                  [
+                      'v13',
+                      0.1
+                  ]
+              ]
+          },
+          {
+              name: 'Opera',
+              id: 'Opera',
+              data: [
+                  [
+                      'v50.0',
+                      0.96
+                  ],
+                  [
+                      'v49.0',
+                      0.82
+                  ],
+                  [
+                      'v12.1',
+                      0.14
+                  ]
+              ]
+          }
+      ]
+  }
+});
+
+
+function getlat(country){
+
+  let ChinaCoord = [35.8617 , 104.1954 ];
+  let IndonesiaCoord = [-0.7893, 113.9213];
+  let AustraliaCoord = [-25.2744 , 133.7751];
+  let JapanCoord = [36.2048 , 138.2529];
+  let NZCoord = [-40.9006, 174.8860];
+  let PNGCoord = [-6, 148];
+  let TaiwanCoord = [23.6978, 120.9605];
+
+  if (country == 'China'){
+    return ChinaCoord[0];
+  }
+  if (country == 'Indonesia'){
+    return IndonesiaCoord[0];
+  }
+  if (country == 'Australia'){
+    return AustraliaCoord[0];
+  }
+  if (country == 'Japan'){
+    return JapanCoord[0];
+  }
+  if (country == 'New Zealand'){
+    return NZCoord[0];
+  }
+  if (country == 'Papua New Guinea'){
+    return PNGCoord[0];
+  }
+  if (country == 'Taiwan, Province Of China'){
+    return TaiwanCoord[0];
+  }
+
+};
+
+function getlon(country){
+
+  let ChinaCoord = [35.8617 , 104.1954 ];
+  let IndonesiaCoord = [-0.7893, 113.9213];
+  let AustraliaCoord = [-25.2744 , 133.7751];
+  let JapanCoord = [36.2048 , 138.2529];
+  let NZCoord = [-40.9006, 174.8860];
+  let PNGCoord = [-6, 148];
+  let TaiwanCoord = [23.6978, 120.9605];
+
+  if (country == 'China'){
+    return ChinaCoord[1];
+  }
+  if (country == 'Indonesia'){
+    return IndonesiaCoord[1];
+  }
+  if (country == 'Australia'){
+    return AustraliaCoord[1];
+  }
+  if (country == 'Japan'){
+    return JapanCoord[1];
+  }
+  if (country == 'New Zealand'){
+    return NZCoord[1];
+  }
+  if (country == 'Papua New Guinea'){
+    return PNGCoord[1];
+  }
+  if (country == 'Taiwan, Province Of China'){
+    return TaiwanCoord[1];
+  }
+
+
+};
+
     // console.log(facilities)
     // let samples = data.samples;
     // let metadata = data.metadata;
@@ -147,6 +695,34 @@ function init() {
   });
 }
 
+
+function createData (facilitiesDict) {
+
+  let complianceArray = [];
+  let nonComplianceArray = [];
+  let criticalArray = [];
+  let actionNeededArray = [];
+
+  facilitiesDict.forEach(f=>{
+
+    complianceArray[f].push(facilitiesDict.complianceCount);
+    nonComplianceArray[f].push(facilitiesDict.nonComplianceCount);
+    criticalArray[f].push(facilitiesDict.criticalCount);
+    actionNeededArray[f].push(facilitiesDict.actionNeededCount);
+
+  });
+
+
+  let seriesData= [{name: 'Compliance', data: complianceArray },
+                   {name: 'Action Needed', data: actionNeededArray },
+                   {name: 'Critical', data: criticalArray},
+                   {name: 'Non Compliance', data: nonComplianceArray}
+
+  ];
+
+  return seriesData;
+
+}
 
 //Function to plot the BarCharts
 
@@ -376,6 +952,63 @@ function fillGaugeChart(metadata) {
   Plotly.newPlot("gauge", [trace], layout)
 
 };
+
+
+function createMap(bikeStations) {
+
+  // Create the tile layer that will be the background of our map.
+  let streetmap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  });
+
+
+  // Create a baseMaps object to hold the streetmap layer.
+  let baseMaps = {
+    "Street Map": streetmap
+  };
+
+  // Create an overlayMaps object to hold the bikeStations layer.
+  let overlayMaps = {
+    "Bike Stations": bikeStations
+  };
+
+  // Create the map object with options.
+  let map = L.map("bar", {
+    center: [40.73, -74.0059],
+    zoom: 12,
+    layers: [streetmap, bikeStations]
+  });
+
+  // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
+  L.control.layers(baseMaps, overlayMaps, {
+    collapsed: false
+  }).addTo(map);
+}
+
+function createMarkers(response) {
+
+  // Pull the "stations" property from response.data.
+  let stations = response.data.stations;
+
+  // Initialize an array to hold bike markers.
+  let bikeMarkers = [];
+
+  // Loop through the stations array.
+  for (let index = 0; index < stations.length; index++) {
+    let station = stations[index];
+
+    // For each station, create a marker, and bind a popup with the station's name.
+    let bikeMarker = L.marker([station.lat, station.lon])
+      .bindPopup("<h3>" + station.name + "<h3><h3>Capacity: " + station.capacity + "</h3>");
+
+    // Add the marker to the bikeMarkers array.
+    bikeMarkers.push(bikeMarker);
+  }
+
+  // Create a layer group that's made from the bike markers array, and pass it to the createMap function.
+  createMap(L.layerGroup(bikeMarkers));
+}
+
 
 
 
