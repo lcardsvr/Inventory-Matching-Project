@@ -1,6 +1,6 @@
 //Sample data at URL Below
 
-let url = "http://127.0.0.1:5000/api/v1.0/leaktestcomp";
+let url = "http://127.0.0.1:5000/api/v1.0/photocomp";
 
 let urlArray = ["http://127.0.0.1:5000/api/v1.0/photocomp", "http://127.0.0.1:5000/api/v1.0/leaktestcomp", "http://127.0.0.1:5000/api/v1.0/calcomp"];
 
@@ -201,10 +201,24 @@ function preparedata(data){
 
   let mainSeriesTest = drilDownMainSeries(facilitiesArray, percentageCompArrray);
 
+  let performerArray = performerMaker(facilitiesArray, percentageCompArrray);
+
   // let drillDownSeriesTest = drillDownSeries(facilitiesArray, data);
+
+  console.log(percentageCompArrray);
+
+  console.log(performerArray);
+
+  // let percentSorted = percentageCompArrray;
+
+  // percentSorted.sort((a,b) => b-a);
+
+  // console.log(percentSorted);
 
 
   console.log(mainSeriesTest);
+
+
 
 
   console.log(seriesData);
@@ -459,6 +473,10 @@ function preparedata(data){
 
     drillDownChart(mainSeriesTest, drillDownSeries);
 
+    //
+
+    plotMetaData(facilitiesArray, percentageCompArrray) 
+
 }
 
 
@@ -580,16 +598,16 @@ function plotBubbleChart(samples) {
 
 //Function to plot the MetaData
 
-function plotMetaData(metadata) {
+function plotMetaData(facilitiesArray, percentageCompArrray) {
 
-  // Create an array of category labels
-  let dataLabels = Object.keys(metadata);
-  // Create an array with Metadata Values
-  let dataValues = Object.values(metadata);
+  // // Create an array of category labels
+  // let dataLabels = Object.keys(metadata);
+  // // Create an array with Metadata Values
+  // let dataValues = Object.values(metadata);
 
 
-  console.log("Labels " + dataLabels);
-  console.log("values " + dataValues);
+  // console.log("Labels " + dataLabels);
+  // console.log("values " + dataValues);
 
 
   // Clear previous contents
@@ -598,11 +616,11 @@ function plotMetaData(metadata) {
 
   // There are 7 properties in the metadata. Writing The keys and Values in the HTML
 
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 5; i++) {
 
-    console.log(dataLabels[i] + " : " + dataValues[i]);
+    console.log(facilitiesArray[i] + " : " + percentageCompArrray[i]);
 
-    d3.select("#sample-metadata").append("h6").text(`${dataLabels[i]}  :  ${dataValues[i]}`);
+    d3.select("#sample-metadata").append("h6").text(`${facilitiesArray[i]}  :  ${percentageCompArrray[i]}%`);
   }
 
 
@@ -641,7 +659,11 @@ function optionChanged() {
   let urlArray = ["http://127.0.0.1:5000/api/v1.0/photocomp", "http://127.0.0.1:5000/api/v1.0/leaktestcomp", "http://127.0.0.1:5000/api/v1.0/calcomp"];
 
   let url = urlArray[dataset];
+  
 
+  if(this.myMap) {
+    this.myMap.remove();
+  }
   let data = d3.json(url).then(function (data) {
     console.log(data);
 
@@ -649,7 +671,10 @@ function optionChanged() {
 
     // Calling function to create the map
 
-    createMarkers(data);
+    // myMap.off();
+    // myMap.remove();
+
+    createMarkers2(data);
     // createMarkers(data);
 
 
@@ -731,11 +756,57 @@ function fillGaugeChart(metadata) {
 
 function createMarkers(response) {
 
+
   // Creating the map object
   let myMap = L.map("bar", {
     center: [0, 130],
     zoom: 2
   });
+
+  // Adding the tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(myMap);
+
+  // Pull the "stations" property from response.data.
+  // let stations = response.data.stations;
+  let stations = response;
+
+
+  // Create a new marker cluster group.
+  let markers = L.markerClusterGroup();
+
+  // Loop through the stations array.
+  for (let index = 0; index < stations.length; index++) {
+    let station = stations[index];
+
+
+    // For each station, create a marker, and bind a popup with the station's name.
+    markers.addLayer(L.marker([station.lat, station.lon])
+      .bindPopup("<h3>" + station.FacilityNamewithFacilityID + "<h3><h3>Compliance Indicator: " + station.ComplianceIndicator + "<h3><h3>Business Line: " + station.BusinessLine + "<h3><h3>Count: " + station.Count + "</h3>"));
+
+  }
+
+  myMap.addLayer(markers);
+
+
+}
+
+function createMarkers2(response) {
+  
+  // document.getElementById('bar').innerHTML = "<div id='bar' style='height: 400px;;'></div>";
+
+  // myMap.off();
+  // myMap.remove();
+
+  // Creating the map object
+  myMap = L.map("bar", {
+    center: [0, 130],
+    zoom: 2
+  });
+
+
+  
 
   // Adding the tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -900,6 +971,29 @@ function drillDownChart(mainSeriesTest, drillDownSeries) {
     }
   });
 
+}
+
+function performerMaker(facilitiesArray, percentageCompArrray){
+
+  let sortable =[];
+
+  for (i=0;i<facilitiesArray;i++){
+
+      // temp = [{percom : percentageCompArrray[i], loc: facilitiesArray [i]}];
+
+      sortable.push([facilitiesArray [i], percentageCompArrray[i]]);
+  }
+
+  console.log(sortable);
+
+  sortable.sort(function(a,b){
+
+    return a[1] - b[1];
+  }) ;
+
+  console.log(sortable);
+
+  return sortable;
 }
 
 
