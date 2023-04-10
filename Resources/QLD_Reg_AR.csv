@@ -1,4 +1,4 @@
-﻿Apparatus ID,Apparatus manufacturer,Model,Apparatus Serial Number,Purpose,Substance ID,Radionuclide,Activity,Measurement Date,Use location,Storage Location,Business Line,ATA,Certificate,COC,In RMIS-NG,Status,Feedback (TIM),StatusShort,Evidence
+﻿ApparatusID,ApparatusManufacturer,Model,ApparatusSerialNumber,Purpose,SubstanceID,Radionuclide,Activity,MeasurementDate,UseLocation,StorageLocation,BusinessLine,ATA,Certificate,COC,InRMIS-NG,Status,FeedbackTIM,StatusShort,Evidence
 I-AT46800,,PNG-GC,67123-50503,,,,,,,85 Duke Street,RPE,,,,No,,,,
 X61962,,PNG-CB,8294-50388,,,,,,,85 Duke Street,WCM,,,,No,,,,
 X61963,,PNG-CB,8596-43320,,,,,,,85 Duke Street,WCM,,,,No,,,,

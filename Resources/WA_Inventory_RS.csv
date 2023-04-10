@@ -1,4 +1,4 @@
-﻿Source_N,Isotope,Quantity,Form,Purpose or Use,Manufacturer,Model,Serial Number,Location(s) on Premises,Current status / location,Business Line,In RMIS-NG,Comments
+﻿SourceN,Isotope,Quantity,Form,PurposeorUse,Manufacturer,Model,SerialNumber,LocationonPremises,CurrentStatusLocation,BusinessLine,InRMISNG,Comments
 1,H3,55.5 GBq,Sealed Gaseous,Gauge - logging,Schlumberger,PNG-AA,1013-51120,Balcatta Facility,,RPE,Yes,
 2,Cs137,37 kBq,Sealed Solid,Calibration,Eckert & Ziegler,EQ-H343123,Q7-784,Jandakot,,WCM,No,"Missing in Qtrac
 Installed in Detector# 974058; currently in toolset DV6MC-AA-3126; DV6ME-AC-2913"
@@ -73,8 +73,8 @@ Installed in Detector# 930378; Currently in toolset ADN4D-BA-V1614; ADN4E-AB-202
 68,Th232,55.50 kBq,Sealed Solid,Calibration,NSSI,GSR-U,1202D,Jandakot Facility,,RPE,Yes,
 69,Th232,55.50 kBq,Sealed Solid,Calibration,Areva,GSR-Y,074-16,Jandakot Facility,,RPE,Yes,
 70,Th232,111 kBq,Sealed Solid,Calibration,Cerca,GSR-D,065-30,Jandakot Facility,,WCM,Yes,
-71,Th232,111 kBq,Sealed Solid,Calibration,Cerca,GSR-D,16/10,Jandakot Facility,,WCM,Yes,
-72,Th232,55.50 kBq,Sealed Solid,Calibration,Cerca,GSR-Y,17/07,Jandakot Facility,,RPE,Yes,
+71,Th232,111 kBq,Sealed Solid,Calibration,Cerca,GSR-D,16-Oct,Jandakot Facility,,WCM,Yes,
+72,Th232,55.50 kBq,Sealed Solid,Calibration,Cerca,GSR-Y,17-Jul,Jandakot Facility,,RPE,Yes,
 73,Th232,111 kBq,Sealed Solid,Calibration,-,GSR-D,24/17,Jandakot Facility,,WCM,Yes,
 74,Am241,555 GBq,Sealed Solid,Gauge - logging,-,NSR-M,Q1223,Jandakot Facility,,WCM,Yes,
 75,Am241,555 GBq,Sealed Solid,Gauge - logging,-,NSR-M,Q1220,Jandakot Facility,,WCM,Yes,

@@ -12,7 +12,10 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, inspect
 
-from flask import Flask, jsonify
+# from flask import Flask, jsonify
+from flask import render_template
+from flask_cors import CORS
+from flask import Flask, jsonify, make_response
 
 
 #################################################
@@ -39,43 +42,58 @@ inspector.get_table_names()
 
 # Save references to each table
 
-# Map Measurement class
-Measurement = Base.classes.measurement
+# Map RMIS class
+RMIS = Base.classes.RMIS
 
-# Map Station class
-Station = Base.classes.station
+# Map QLD_IRA class
+QLD_IRA = Base.classes.QLD_IRA
+
+# Map QLD_Reg_AR class
+QLD_Reg_AR = Base.classes.QLD_Reg_AR
+
+# Map QLD_SRS class
+QLD_SRS_AR = Base.classes.QLD_SRS
+
+# Map SA_Reg class
+SA_Reg = Base.classes.SA_Reg
+
+# Map WA_RS_Reg class
+WA_RS_Reg = Base.classes.WA_RS_Reg
+
+# Map WA_RX_Reg class
+WA_RX_Reg = Base.classes.WA_RX_Reg
 
 
 #################################################
 # Functions to check dates for queries
 #################################################
 
-# def check_date (argument):
+def check_date (argument):
 
-#     date_list = argument.split('-')
+    date_list = argument.split('-')
 
-#     if len (date_list)==3:
+    if len (date_list)==3:
 
-#         try:
+        try:
 
-#             year = int(date_list[0])
+            year = int(date_list[0])
 
-#             month = int(date_list[1])
+            month = int(date_list[1])
 
-#             day = int(date_list[2])
+            day = int(date_list[2])
 
-#             query_date = dt.date(year, month,day)
+            query_date = dt.date(year, month,day)
 
-#             return (query_date)
+            return (query_date)
         
-#         except:
+        except:
 
 
-#             return (False)
+            return (False)
         
-#     else:
+    else:
         
-#         return (False)
+        return (False)
 
 
 
@@ -94,73 +112,156 @@ def welcome():
     """List all available api routes."""
     return (
         f"<head>"
-        f"<title>Module 10 Challenge - LCard</title>" 
+        f"<title>Project 03 - LCard</title>" 
         f"</head>"
-        f"<h1>Module 10 Challenge</h1>" 
-        f'<img src="https://static.bc-edx.com/data/dla-1-2/m10/lms/img/surfs-up.jpg" alt=""/>'
-        f"<br/>"
+        f"<h1>Project 03</h1>" 
+        # f'<img src="https://static.bc-edx.com/data/dla-1-2/m10/lms/img/surfs-up.jpg" alt=""/>'
+        # f"<br/>"
         f"<h2>Available Routes:</h2><br/>"
         f"<br/>"
         f"<ol>"
-        f"<li>To get the Jsonified precipitation data for the last year in the database :<br/>"
-        f"<strong>  /api/v1.0/precipitation </strong></li><br/>"
+        f"<li>To get the Jsonified Photo Inventory Compliance data :<br/>"
+        f"<strong>  /api/v1.0/photocomp </strong></li><br/>"
         f"<br/>"
-        f"<li>Jsonified data of all of the stations in the database :<br/>"
-        f" <strong> /api/v1.0/stations</strong></li><br/>"
+        f"<li>To get the Jsonified Leak Test Compliance data :<br/>"
+        f" <strong> /api/v1.0/leaktestcomp</strong></li><br/>"
         f"<br/>"
-        f"<li>Jsonified last year of data  for the most active station (USC00519281) :<br/>"
-        f" <strong> /api/v1.0/tobs</strong></li><br/>"
+        f"<li>To get the Jsonified Calibration Compliance data :<br/>"
+        f" <strong> /api/v1.0/calcomp</strong></li><br/>"
         f"<br/>"
-        f"<li> Min, max, and average temperatures calculated from the given start date to the end of the dataset. Input format must be numbers separated by a hyphen following Year-MM-DD format:<br/>"
-        f"<strong>  /api/v1.0/Year-MM-DD</strong></li><br/>"
-        f"<br/>"
-        f"<li>Min, max, and average temperatures calculated from the given start date to the given end date. Input format must be numbers separated by a hyphen following Year-MM-DD format:<br/>"
-        f"<strong> /api/v1.0/Year-MM-DD/Year-MM-DD</strong></li><br/>"
-        f"</ol>"
-        f"<strong>For the queries data is available between 2010-01-01 and 2017-08-23</strong>"
+        # f"<li> Min, max, and average temperatures calculated from the given start date to the end of the dataset. Input format must be numbers separated by a hyphen following Year-MM-DD format:<br/>"
+        # f"<strong>  /api/v1.0/Year-MM-DD</strong></li><br/>"
+        # f"<br/>"
+        # f"<li>Min, max, and average temperatures calculated from the given start date to the given end date. Input format must be numbers separated by a hyphen following Year-MM-DD format:<br/>"
+        # f"<strong> /api/v1.0/Year-MM-DD/Year-MM-DD</strong></li><br/>"
+        # f"</ol>"
+        # f"<strong>For the queries data is available between 2010-01-01 and 2017-08-23</strong>"
+        
     )
 
 
+# @app.route("/")
+# def home():
+#     # people = Person.query.all()
 
-# @app.route("/api/v1.0/precipitation")
-# def precipitation():
-#     # Create our session (link) from Python to the DB
-#     session = Session(engine)
-
-#     # Design a query to retrieve the last 12 months of precipitation data and plot the results. 
-#     # Starting from the most recent data point in the database. 
-
-#     # The most recent day as per the query above is 2017-08-23
-
-#     # Calculate the date one year from the last date in data set.
-
-#     #One year is going be assumed as 365 days as the last day was in 2017 which had 365 days (The year 2017 had 365 days. The year 2016 had 366 days.)
-
-#     query_date = dt.date(2017, 8, 23) - dt.timedelta(days=365)
-#     print("Query Date: ", query_date)
-
-#     # Perform a query to retrieve the data and precipitation scores
+#     PhotoComp =photocomp()
+#     LeakTestComp = leaktestcomp()
+#     CalibrationComp = calcomp()
+#     return render_template("index.html", PhotoComp,LeakTestComp,CalibrationComp )
 
 
-#     prcp_data = session.query(Measurement.date, Measurement.prcp).\
-#      filter(Measurement.date >= query_date).\
-#      order_by(Measurement.date).all()
+@app.route("/api/v1.0/photocomp")
+def photocomp():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+
+
+    PhotoComp = session.query(RMIS.Geounit, RMIS.Country, RMIS.FacilityNamewithFacilityID, RMIS.BusinessLine, RMIS.ConfirmationPhotoComplianceIndicator, func.count(RMIS.ConfirmationPhotoComplianceIndicator)).\
+                group_by(RMIS.FacilityNamewithFacilityID).\
+                group_by(RMIS.BusinessLine).\
+                group_by(RMIS.ConfirmationPhotoComplianceIndicator).\
+                all()
     
-#     session.close()
+    session.close()
+
+    PhotoComp_data_out = []
+
+    for row in PhotoComp:
+        PhotoComp_dict = {}
+        PhotoComp_dict["Geounit"]=row.Geounit
+        PhotoComp_dict["Country"]=row.Country
+        PhotoComp_dict["CompType"]="PhotoComp"       
+        PhotoComp_dict["FacilityNamewithFacilityID"]=row.FacilityNamewithFacilityID
+        PhotoComp_dict["BusinessLine"]=row.BusinessLine
+        PhotoComp_dict["ComplianceIndicator"]=row.ConfirmationPhotoComplianceIndicator
+        PhotoComp_dict["Count"]=row[5]
+
+
+        PhotoComp_data_out.append(PhotoComp_dict)
+
+
+    response = make_response(jsonify(PhotoComp_data_out))
     
-#     prcp_data_df = pd.DataFrame(prcp_data, columns=['date', 'precipitation'])
+    response.headers["Access-Control-Allow-Origin"]="*"
+    
+    return response
+    
+    # return jsonify(PhotoComp_data_out)
 
 
-#     prcp_data_out = []
 
-#     for date, prcp in prcp_data:
-#         prcp_dict = {}
-#         prcp_dict["date"]=date
-#         prcp_dict["prcp"]=prcp
-#         prcp_data_out.append(prcp_dict)
+@app.route("/api/v1.0/leaktestcomp")
+def leaktestcomp():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+    
+    LeakTestComp = session.query(RMIS.Geounit, RMIS.Country,RMIS.FacilityNamewithFacilityID, RMIS.BusinessLine, RMIS.LeakTestComplianceIndicator, func.count(RMIS.LeakTestComplianceIndicator)).\
+    		group_by(RMIS.FacilityNamewithFacilityID).\
+    		group_by(RMIS.BusinessLine).\
+    		group_by(RMIS.LeakTestComplianceIndicator).\
+    		all()
+    
+    session.close()
 
-#     return jsonify(prcp_data_out)
+    LeakTestComp_data_out = []
 
+    for row in LeakTestComp:
+        LeakTestComp_dict = {}
+        LeakTestComp_dict["Geounit"]=row.Geounit
+        LeakTestComp_dict["Country"]=row.Country
+        LeakTestComp_dict["CompType"]="LeakTestComp"   
+        LeakTestComp_dict["FacilityNamewithFacilityID"]=row.FacilityNamewithFacilityID
+        LeakTestComp_dict["BusinessLine"]=row.BusinessLine
+        LeakTestComp_dict["ComplianceIndicator"]=row.LeakTestComplianceIndicator
+        LeakTestComp_dict["Count"]=row[5]
+
+        LeakTestComp_data_out.append(LeakTestComp_dict)
+
+
+    response = make_response(jsonify(LeakTestComp_data_out))
+    
+    response.headers["Access-Control-Allow-Origin"]="*"
+    
+    return response
+
+    # return jsonify(LeakTestComp_data_out)
+
+
+
+@app.route("/api/v1.0/calcomp")
+def calcomp():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+    
+    CalibrationComp = session.query(RMIS.Geounit, RMIS.Country,RMIS.FacilityNamewithFacilityID, RMIS.BusinessLine, RMIS.CalibrationComplianceIndicator, func.count(RMIS.CalibrationComplianceIndicator)).\
+    		group_by(RMIS.FacilityNamewithFacilityID).\
+    		group_by(RMIS.BusinessLine).\
+    		group_by(RMIS.CalibrationComplianceIndicator).\
+    		all()
+    
+    session.close()
+
+    CalibrationComp_data_out = []
+
+    for row in CalibrationComp:
+        CalibrationComp_dict = {}
+        CalibrationComp_dict["Geounit"]=row.Geounit
+        CalibrationComp_dict["Country"]=row.Country
+        CalibrationComp_dict["CompType"]="CalibrationComp"   
+        CalibrationComp_dict["FacilityNamewithFacilityID"]=row.FacilityNamewithFacilityID
+        CalibrationComp_dict["BusinessLine"]=row.BusinessLine
+        CalibrationComp_dict["ComplianceIndicator"]=row.CalibrationComplianceIndicator
+        CalibrationComp_dict["Count"]=row[5]
+
+        CalibrationComp_data_out.append(CalibrationComp_dict)
+        
+    response = make_response(jsonify(CalibrationComp_data_out))
+    
+    response.headers["Access-Control-Allow-Origin"]="*"
+    
+    return response
+
+    # return jsonify(CalibrationComp_data_out)
 
 
 

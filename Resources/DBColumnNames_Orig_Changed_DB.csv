@@ -1,0 +1,125 @@
+Original,Changed,TableDb
+IRA Apparatus ID,IRAApparatusID,QLD_IRA
+Apparatus type,ApparatusType,QLD_IRA
+Manufacturer,Manufacturer,QLD_IRA
+Model,Model,QLD_IRA
+Serial number,SerialNumber,QLD_IRA
+Tube details,TubeDetails,QLD_IRA
+Location (Storage),LocationStorage,QLD_IRA
+Location (Use),LocationUse,QLD_IRA
+Location (Relocating to),LocationRelocatingto,QLD_IRA
+SN,SN,QLD_IRA
+Apparatus ID,ApparatusID,QLD_Reg_AR
+Apparatus manufacturer,ApparatusManufacturer,QLD_Reg_AR
+Model,Model,QLD_Reg_AR
+Apparatus Serial Number,ApparatusSerialNumber,QLD_Reg_AR
+Purpose,Purpose,QLD_Reg_AR
+Substance ID,SubstanceID,QLD_Reg_AR
+Radionuclide,Radionuclide,QLD_Reg_AR
+Activity,Activity,QLD_Reg_AR
+Measurement Date,MeasurementDate,QLD_Reg_AR
+Use location,UseLocation,QLD_Reg_AR
+Storage Location,StorageLocation,QLD_Reg_AR
+Business Line,BusinessLine,QLD_Reg_AR
+ATA,ATA,QLD_Reg_AR
+Certificate,Certificate,QLD_Reg_AR
+COC,COC,QLD_Reg_AR
+In RMIS-NG,InRMIS-NG,QLD_Reg_AR
+Status,Status,QLD_Reg_AR
+Feedback (TIM),FeedbackTIM,QLD_Reg_AR
+StatusShort,StatusShort,QLD_Reg_AR
+Evidence,Evidence,QLD_Reg_AR
+SRS Substance ID,SRSSubstanceID,QLD_SRS
+Radionuclide,Radionuclide,QLD_SRS
+Manufacturer,Manufacturer,QLD_SRS
+Model,Model,QLD_SRS
+Serial number,SerialNumber,QLD_SRS
+Physical form,Physicalform,QLD_SRS
+Chemical form,Chemicalform,QLD_SRS
+Initial activity,Initialactivity,QLD_SRS
+Initial activity date,Initialactivitydate,QLD_SRS
+Device ID,DeviceID,QLD_SRS
+Device type,DeviceType,QLD_SRS
+Device manufacturer,DeviceManufacturer,QLD_SRS
+Device model,DeviceModel,QLD_SRS
+Device serial number,DeviceSerialNumber,QLD_SRS
+Location (Storage),LocationStorage,QLD_SRS
+Location (Use),LocationUse,QLD_SRS
+Location (Relocating to),LocationRelocatingto,QLD_SRS
+Basin,Basin,RMIS
+Geounit,Geounit,RMIS
+Country,Country,RMIS
+Facility Name with Facility ID,FacilityNamewithFacilityID,RMIS
+Business Line,BusinessLine,RMIS
+Model ID,ModelID,RMIS
+Serial No,SerialNo,RMIS
+Calibration Frequency in Month,CalibrationFrequencyinMonth,RMIS
+Date of Last Calibration Test,DateofLastCalibrationTest,RMIS
+Calibration Compliance Indicator,CalibrationComplianceIndicator,RMIS
+Leak Test Frequency in Month,LeakTestFrequencyinMonth,RMIS
+Date of Last Leak Test,DateofLastLeakTest,RMIS
+Leak Test Compliance Indicator,LeakTestComplianceIndicator,RMIS
+Last Leak Test Result Recorded,LastLeakTestResultRecorded,RMIS
+Leak Test Result Compliance Indicator,LeakTestResultComplianceIndicator,RMIS
+Confirmation Inventory Frequency,ConfirmationInventoryFrequency,RMIS
+Date of last confirmation inv test,Dateoflastconfirmationinvtest,RMIS
+Date of next confirmation inv test,Dateofnextconfirmationinvtest,RMIS
+Photo Inventory Frequency,PhotoInventoryFrequency,RMIS
+Date of Last Photo Inv test,DateofLastPhotoInvtest,RMIS
+Date of Next Photo Inv test,DateofNextPhotoInvtest,RMIS
+Confirmation & Photo Compliance Indicator,ConfirmationPhotoComplianceIndicator,RMIS
+Located,Located,RMIS
+Physical Location,PhysicalLocation,RMIS
+PAU / Countrol site,PAUControlSite,RMIS
+Description,Description,SA
+Category,Category,SA
+Certificate Number,CertificateNumber,SA
+Isotope,Isotope,SA
+Quantity,Quantity,SA
+Form,Form,SA
+Use,Use,SA
+Manufacturer,Manufacturer,SA
+Model,Model,SA
+Serial Number,SerialNumber,SA
+Container Model,ContainerModel,SA
+Container Serial,ContainerSerial,SA
+Location(s) on Premises,LocationonPremises,SA
+Current status / location,CurrentStatusLocation,SA
+Business Line,BusinessLine,SA
+In RMIS-NG,InRMISNG,SA
+Comments,Comments,SA
+Source_N,SourceN,WA_Inventory_Amendments
+Manufacturer,Manufacturer,WA_Inventory_Amendments
+Model,Model,WA_Inventory_Amendments
+Serial Number,SerialNumber,WA_Inventory_Amendments
+Equipment Use,EquipmentUse,WA_Inventory_Amendments
+Location(s) on Premises,LocationonPremises,WA_Inventory_Amendments
+Current status / location,CurrentStatusLocation,WA_Inventory_Amendments
+Business Line,BusinessLine,WA_Inventory_Amendments
+In RMIS-NG,InRMISNG,WA_Inventory_Amendments
+Comments,Comments,WA_Inventory_Amendments
+Comm_02,Comm02,WA_Inventory_Amendments
+Comm_03,Comm03,WA_Inventory_Amendments
+Comm_03,Comm03,WA_Inventory_Amendments
+Source_N,SourceN,WA_Inventory_RS
+Isotope,Isotope,WA_Inventory_RS
+Quantity,Quantity,WA_Inventory_RS
+Form,Form,WA_Inventory_RS
+Purpose or Use,PurposeorUse,WA_Inventory_RS
+Manufacturer,Manufacturer,WA_Inventory_RS
+Model,Model,WA_Inventory_RS
+Serial Number,SerialNumber,WA_Inventory_RS
+Location(s) on Premises,LocationonPremises,WA_Inventory_RS
+Current status / location,CurrentStatusLocation,WA_Inventory_RS
+Business Line,BusinessLine,WA_Inventory_RS
+In RMIS-NG,InRMISNG,WA_Inventory_RS
+Comments,Comments,WA_Inventory_RS
+Model,Model,WA_Inventory_RX
+Serial Number,SerialNumber,WA_Inventory_RX
+Equipment Use,EquipmentUse,WA_Inventory_RX
+Location(s) on Premises,LocationonPremises,WA_Inventory_RX
+Current status / location,CurrentStatusLocation,WA_Inventory_RX
+Business Line,BusinessLine,WA_Inventory_RX
+In RMIS-NG,InRMISNG,WA_Inventory_RX
+Comments,Comments,WA_Inventory_RX
+Comments_2,Comments2,WA_Inventory_RX

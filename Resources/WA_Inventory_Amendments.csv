@@ -1,4 +1,4 @@
-﻿Source_N,Manufacturer,Model,Serial Number,Equipment Use,Location(s) on Premises,Current status / location,Business Line,In RMIS-NG,Comments,Comm_02,Comm_03,Comm_03
+﻿SourceN,Manufacturer,Model,SerialNumber,EquipmentUse,LocationonPremises,CurrentStatusLocation,BusinessLine,InRMISNG,Comments,Comm02,Comm03,Comm03
 ,Schlumberger,PNG-CB ,8955-51864,Logging,Jandakot Facility,,WCM,Yes,Sent to Japan - RX Amendment sent 18-Oct-2022,,,
 22,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,M2-136,Jandakot Facility,,WCM,No,Sent to Malaysia - RS amednment sent 31-Oct-2022
 25,Cs137,2.22 kBq,Sealed Solid,Calibration,-,EQ-602-2174,K1-273,Jandakot Facility,,WCM,No,RS amendment sent - 7-Jun-22 (Sent to Malaysia)

@@ -1,49 +1,49 @@
-﻿Description,Category,Certificate Number,Isotope,Quantity,Form,Use,Manufacturer,Model,Serial Number,Container Model,Container Serial,Location(s) on Premises,Current status / location,Business Line,In RMIS-NG,Comments
+﻿Description,Category,CertificateNumber,Isotope,Quantity,Form,Use,Manufacturer,Model,SerialNumber,ContainerModel,ContainerSerial,LocationonPremises,CurrentStatusLocation,BusinessLine,InRMISNG,Comments
 Registration,Sealed Source,19337,Cs137,64 GBq,Sealed Solid,BORE HOLE PROBE,3M,GSR-J,3739,GCS-VC,672,"RA PIT 1, MOOMBA 5710",,RPE,Yes,
 Registration,Sealed Source,20089,Am241,592 GBq,Sealed Solid,BORE HOLE PROBE,GAMMATRON,NSR-F,G5136,NCS-YC,5166,"Yellow Cell, MOOMBA 5710",,RPE,Yes,NSR-FC in RMIS-NG
-Registration,Sealed Source,22189,Cs137,62.53 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,GSR-Z,A2262,NGCS-CB,11-06,"RA PIT, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
-Registration,Sealed Source,22189,Am241,377.4 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,NSR-U,N-392,NGCS-CB,11-06,"RA PIT, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
-Registration,Sealed Source,22190,Cs137,60.59 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,GSR-Z,7793B,NGCS-CB,13-05,"RA PIT, MOOMBA 5710",,WCM,No,Junked - Disposed / PC-PC-NSSI
-Registration,Sealed Source,22190,Am241,377.4 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,NSR-U,N-400,NGCS-CB,13-05,"RA PIT, MOOMBA 5710",,WCM,No,Junked - Disposed / PC-PC-NSSI
+Registration,Sealed Source,22189,Cs137,62.53 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,GSR-Z,A2262,NGCS-CB,11-Jun,"RA PIT, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
+Registration,Sealed Source,22189,Am241,377.4 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,NSR-U,N-392,NGCS-CB,11-Jun,"RA PIT, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
+Registration,Sealed Source,22190,Cs137,60.59 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,GSR-Z,7793B,NGCS-CB,13-May,"RA PIT, MOOMBA 5710",,WCM,No,Junked - Disposed / PC-PC-NSSI
+Registration,Sealed Source,22190,Am241,377.4 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,NSR-U,N-400,NGCS-CB,13-May,"RA PIT, MOOMBA 5710",,WCM,No,Junked - Disposed / PC-PC-NSSI
 Registration,Sealed Source,22191,Cs137,59.2 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3131,NGCS-CB,98-14,"RA PIT, MOOMBA 5710",,WCM,Yes,"In SA, Beach Energy / Saxon Rig 184 (NGCS-CB-13-05) SA has been informed for change of Transfershield"
 Registration,Sealed Source,22191,Am241,377.4 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-U,U034,NGCS-CB,98-14,"RA PIT, MOOMBA 5710",,WCM,Yes,"In SA, Beach Energy / Saxon Rig 184 (NGCS-CB-13-05) SA has been informed for change of Transfershield"
-Registration,Sealed Source,22192,Cs137,59.57 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3381,NGCS-CB,08-30,"RA PIT, MOOMBA 5710",,WCM,Yes,In Jandakot GSR-ZC model in RMIS-NG
-Registration,Sealed Source,22192,Am241,370 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-U,4Q349,NGCS-CB,08-30,"RA PIT, MOOMBA 5710",,WCM,Yes,In Jandakot 
+Registration,Sealed Source,22192,Cs137,59.57 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3381,NGCS-CB,Aug-30,"RA PIT, MOOMBA 5710",,WCM,Yes,In Jandakot GSR-ZC model in RMIS-NG
+Registration,Sealed Source,22192,Am241,370 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-U,4Q349,NGCS-CB,Aug-30,"RA PIT, MOOMBA 5710",,WCM,Yes,In Jandakot 
 Registration,Sealed Source,22478,Am241,592 GBq,Sealed Solid,BORE HOLE PROBE,MONSANTO RESEARCH CORP.,NSR-F,A1554,NCS-YC,4315,"SLB Building, MOOMBA 5710",,RPE,Yes,
 Registration,Sealed Source,22479,Cs137,62.9 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-J,4802,GCS-V,1121,"SLB Building, MOOMBA 5710",,RPE,No,
 Registration,Sealed Source,22480,Cs137,63 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-J,A5334,GCS-V,1424,"SLB Building, MOOMBA 5710",,RPE,Yes,
 Registration,Sealed Source,22609,Am241,592 GBq,Sealed Solid,BORE HOLE PROBE,MONSANTO RESEARCH CORP.,NSR-F,A1100,NCS-YC,4850,"RA PIT, MOOMBA 5710",,RPE,Yes,
 Registration,Sealed Source,22610,Am241,592 GBq,Sealed Solid,BORE HOLE PROBE,MONSANTO RESEARCH CORP.,NSR-F,A659,NCS-YC,5049,"RA PIT, MOOMBA 5710",,RPE,No,
-Registration,Sealed Source,22622,Cs137,60.3 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3242,NGCS-CB,07-12,"RA PIT, MOOMBA 5710",,WCM,Yes,In Jandakot
-Registration,Sealed Source,22622,Am241,370 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-U,Q1148,NGCS-CB,07-12,"RA PIT, MOOMBA 5710",,WCM,Yes,In Jandakot
+Registration,Sealed Source,22622,Cs137,60.3 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3242,NGCS-CB,7-Dec,"RA PIT, MOOMBA 5710",,WCM,Yes,In Jandakot
+Registration,Sealed Source,22622,Am241,370 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-U,Q1148,NGCS-CB,7-Dec,"RA PIT, MOOMBA 5710",,WCM,Yes,In Jandakot
 Registration,Sealed Source,22722,Am241,592 GBq,Sealed Solid,BORE HOLE PROBE,GAMMATRON,NSR-FC,G5395,NCS-YC,5469,"RA PIT, GIDGEALPA 5731",,RPE,Yes,
 Registration,Sealed Source,22797,Cs137,62.9 GBq,Sealed Solid,BORE HOLE PROBE,AMERSHAM,,A2171,NGCS-BA,28,"RA PIT 1, MOOMBA 5710",,WCM,No,Junked - Disposed / PC-PC-NSSI
 Registration,Sealed Source,22797,Am241,418 GBq,Sealed Solid,BORE HOLE PROBE,AMERSHAM,,A194,NGCS-BA,28,"RA PIT 1, MOOMBA 5710",,WCM,No,Junked - Disposed / PC-PC-NSSI
-Registration,Sealed Source,22798,Cs137,57 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,,A2365,NGCS-BA,01-10,"RA PIT, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
-Registration,Sealed Source,22798,Am241,444 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,,A252,NGCS-BA,01-10,"RA PIT, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
+Registration,Sealed Source,22798,Cs137,57 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,,A2365,NGCS-BA,1-Oct,"RA PIT, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
+Registration,Sealed Source,22798,Am241,444 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,,A252,NGCS-BA,1-Oct,"RA PIT, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
 Registration,Sealed Source,22877,Cs137,57.35 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3179,NGCS-BA,00-28,"RA STORE, MOOMBA 5710",,WCM,Yes,In Jandakot 
 Registration,Sealed Source,22877,Am241,555 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-M,Q1220,NGCS-BA,00-28,"RA STORE, MOOMBA 5710",,WCM,Yes,In Jandakot 
-Registration,Sealed Source,22878,Cs137,57.35 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,GSR-Z,A3180,NGCS-BA,08-08,"RA STORE, MOOMBA 5710",,WCM,Yes,In Jandakot
-Registration,Sealed Source,22878,Am241,555 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,NSR-M,Q1221,NGCS-BA,08-08,"RA STORE, MOOMBA 5710",,WCM,Yes,In Jandakot
-Registration,Sealed Source,22879,Cs137,59.57 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A2972,NGCS-BA,08-05,"RA STORE, MOOMBA 5710",,WCM,Yes,"In Jandakot, currently in NGCS-BA-00-28"
-Registration,Sealed Source,22879,Am241,555 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-M,Q1223,NGCS-BA,08-05,"RA STORE, MOOMBA 5710",,WCM,Yes,"In Jandakot, currently in NGCS-BA-00-28"
-Registration,Sealed Source,22880,Cs137,56.61 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A2882,NGCS-BA,07-12,"RA STORE, MOOMBA 5710",,WCM,No,LIH - 20151219090612
-Registration,Sealed Source,22880,Am241,444 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-M,A269,NGCS-BA,07-12,"RA STORE, MOOMBA 5710",,WCM,No,LIH - 20151219090612
-Registration,Sealed Source,22881,Cs137,58.83 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GGLS-DA,A2843,DVGTS,0275,"RA STORE, MOOMBA 5710",,WCM,Yes,In WA - Vermilion
-Registration,Sealed Source,22882,Cs137,58.74 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GGLS-DA,A2806,DVGTS,0263,"RA STORE, MOOMBA 5710",,WCM,Yes,In Jandakot
-Registration,Sealed Source,22921,Cs137,64 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,GSR-Z,A2268,NGCS-BA,02-10,"RA STORE, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
-Registration,Sealed Source,22921,Am241,444 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,NSR-M,A236,NGCS-BA,02-10,"RA STORE, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
+Registration,Sealed Source,22878,Cs137,57.35 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,GSR-Z,A3180,NGCS-BA,8-Aug,"RA STORE, MOOMBA 5710",,WCM,Yes,In Jandakot
+Registration,Sealed Source,22878,Am241,555 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,NSR-M,Q1221,NGCS-BA,8-Aug,"RA STORE, MOOMBA 5710",,WCM,Yes,In Jandakot
+Registration,Sealed Source,22879,Cs137,59.57 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A2972,NGCS-BA,8-May,"RA STORE, MOOMBA 5710",,WCM,Yes,"In Jandakot, currently in NGCS-BA-00-28"
+Registration,Sealed Source,22879,Am241,555 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-M,Q1223,NGCS-BA,8-May,"RA STORE, MOOMBA 5710",,WCM,Yes,"In Jandakot, currently in NGCS-BA-00-28"
+Registration,Sealed Source,22880,Cs137,56.61 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A2882,NGCS-BA,7-Dec,"RA STORE, MOOMBA 5710",,WCM,No,LIH - 20151219090612
+Registration,Sealed Source,22880,Am241,444 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-M,A269,NGCS-BA,7-Dec,"RA STORE, MOOMBA 5710",,WCM,No,LIH - 20151219090612
+Registration,Sealed Source,22881,Cs137,58.83 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GGLS-DA,A2843,DVGTS,275,"RA STORE, MOOMBA 5710",,WCM,Yes,In WA - Vermilion
+Registration,Sealed Source,22882,Cs137,58.74 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GGLS-DA,A2806,DVGTS,263,"RA STORE, MOOMBA 5710",,WCM,Yes,In Jandakot
+Registration,Sealed Source,22921,Cs137,64 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,GSR-Z,A2268,NGCS-BA,2-Oct,"RA STORE, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
+Registration,Sealed Source,22921,Am241,444 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,NSR-M,A236,NGCS-BA,2-Oct,"RA STORE, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
 Registration,Sealed Source,22964,Cs137,64.75 GBq,Sealed Solid,BORE HOLE PROBE,NSSI Sources & Services Inc,GSR-Z,A2260,NGCS-BA,#009,"RA STORE, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
 Registration,Sealed Source,22964,Am241,444 GBq,Sealed Solid,BORE HOLE PROBE,NSSI Sources & Services Inc,NSR-M,A235,NGCS-BA,#009,"RA STORE, MOOMBA 5710",,WCM,No,sent for RAN / PC-PC-NSSI
-Registration,Sealed Source,23095,Cs137,58.83 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GGLS-DA,A2973,DVGTS,0421,"RA STORE, MOOMBA 5710",,WCM,Yes,In Jandakot
-Registration,Sealed Source,23096,Cs137,61.05 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GGLS-DA,A2802,DVGTS,0309,"RA STORE, MOOMBA 5710",,WCM,No,Lost in Hole
-Registration,Sealed Source,23097,Cs137,60.13 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GGLS-DA,A2823,DVGTS-BA,0361,"RA STORE, MOOMBA 5710",,WCM,Yes,In WA - Vermilion
+Registration,Sealed Source,23095,Cs137,58.83 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GGLS-DA,A2973,DVGTS,421,"RA STORE, MOOMBA 5710",,WCM,Yes,In Jandakot
+Registration,Sealed Source,23096,Cs137,61.05 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GGLS-DA,A2802,DVGTS,309,"RA STORE, MOOMBA 5710",,WCM,No,Lost in Hole
+Registration,Sealed Source,23097,Cs137,60.13 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GGLS-DA,A2823,DVGTS-BA,361,"RA STORE, MOOMBA 5710",,WCM,Yes,In WA - Vermilion
 Registration,Sealed Source,23170,Cs137,60.68 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-J,4762,GCS-V,1639,"RA STORE, MOOMBA 5710",,RPE,Yes,
 Registration,Sealed Source,23171,Cs137,57.35 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-J,A5596,GCS-V,12062,"RA STORE, MOOMBA 5710",,RPE,Yes,
-Registration,Sealed Source,23238,Cs137,61 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3325,NGCS-AA,07-11,"RA STORE, MOOMBA 5710",,WCM,No,Sent to Azerbaijan
-Registration,Sealed Source,23238,Am241,278 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-T,Q1193,NGCS-AA,07-11,"RA STORE, MOOMBA 5710",,WCM,No,Sent to Azerbaijan
-Registration,Sealed Source,23239,Cs137,59.57 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3268,NGCS-AA,08-35,"RA STORE, MOOMBA 5710",,WCM,Yes,in Jandakot
-Registration,Sealed Source,23239,Am241,278 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-T,Q1157,NGCS-AA,08-35,"RA STORE, MOOMBA 5710",,WCM,Yes,in Jandakot
+Registration,Sealed Source,23238,Cs137,61 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3325,NGCS-AA,7-Nov,"RA STORE, MOOMBA 5710",,WCM,No,Sent to Azerbaijan
+Registration,Sealed Source,23238,Am241,278 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-T,Q1193,NGCS-AA,7-Nov,"RA STORE, MOOMBA 5710",,WCM,No,Sent to Azerbaijan
+Registration,Sealed Source,23239,Cs137,59.57 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3268,NGCS-AA,Aug-35,"RA STORE, MOOMBA 5710",,WCM,Yes,in Jandakot
+Registration,Sealed Source,23239,Am241,278 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-T,Q1157,NGCS-AA,Aug-35,"RA STORE, MOOMBA 5710",,WCM,Yes,in Jandakot
 Registration,Sealed Source,23240,Cs137,60.68 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3456,NGCS-AA,15-77,"RA STORE, MOOMBA 5710",,WCM,No,MENA-QTG-QASTLM
 Registration,Sealed Source,23240,Am241,278 GBq,Sealed Solid,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-T,Q1399,NGCS-AA,15-77,"RA STORE, MOOMBA 5710",,WCM,No,MENA-QTG-QASTLM
 Registration,Sealed Source,23258,Cs137,64.75 GBq,Sealed Solid,BORE HOLE PROBE,AEA TECHNOLOGY,GSR-J,A5052,GCS-V,APG0882,"RA PIT, MOOMBA 5710",,RPE,Yes,
@@ -51,8 +51,8 @@ Registration,Sealed Source,23259,Am241,610.5 GBq,Sealed Solid,BORE HOLE PROBE,GA
 Registration Application,Ionising Apparatus,25292,,,,,Princeton Technology Centre,PNG-HB,3091-51401,,,,,RPE,Yes,
 Registration Application,Ionising Apparatus,25619,,,,,Princeton Technology Centre,PNG-AA,1177-52252,,,,,RPE,Yes,
 Registration Application,Sealed Source,24016,,,,BORE HOLE PROBE,Schlumberger,GSR-J,4739,,1616,,,RPE,Yes,
-Registration Application,Sealed Source,24019,,,,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-U,Q1187,NGCS-CB,07-12,,,WCM,Yes,
-Registration Application,Sealed Source,24019,,,,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3296,NGCS-CB,07-12,,,WCM,Yes,
+Registration Application,Sealed Source,24019,,,,BORE HOLE PROBE,QSA Global / AEA Technology,NSR-U,Q1187,NGCS-CB,7-Dec,,,WCM,Yes,
+Registration Application,Sealed Source,24019,,,,BORE HOLE PROBE,QSA Global / AEA Technology,GSR-Z,A3296,NGCS-CB,7-Dec,,,WCM,Yes,
 Registration Application,Sealed Source,24139,,,,BORE HOLE PROBE,,GCS-V,4739,,1616,,,RPE,Yes,
 Registration Application,Sealed Source,24140,,,,BORE HOLE PROBE,,NCS-YC,G5181,,,,,RPE,Yes,
 Registration Application,Sealed Source,24141,,,,BORE HOLE PROBE,,NCS-YC,G5216,,,,,RPE,Yes,

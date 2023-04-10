@@ -1,4 +1,4 @@
-﻿Model,Serial Number,Equipment Use,Location(s) on Premises,Current status / location,Business Line,In RMIS-NG,Comments,Comments_2
+﻿Model,SerialNumber,EquipmentUse,LocationonPremises,CurrentStatusLocation,BusinessLine,InRMISNG,Comments,Comments2
 BTX,BTX-348,XRD,Jandakot Facility,,WCM,No,GeoServices - registered but regulator requires generator serial number,
 PNG-AA,1013-51120,Logging,Jandakot Facility,,RPE,No,,
 PNG-AA,1090-50652,Logging,Jandakot Facility,,RPE,No,,

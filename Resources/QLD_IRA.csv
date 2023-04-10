@@ -1,4 +1,4 @@
-﻿IRA Apparatus ID,Apparatus type,Manufacturer,Model,Serial number,Tube details,Location (Storage),Location (Use),Location (Relocating to),SN
+﻿IRAApparatusID,ApparatusType,Manufacturer,Model,SerialNumber,TubeDetails,LocationStorage,LocationUse,LocationRelocatingto,SN
 I-AT46800, 14 MeV neutron generator incorporating a H3 target in the form of a sealed radioactive substance, Schlumberger Technology Corporation,PNG-GC, PNG-GC 67123-50503,No data, 85 Duke Street ROMA QLD 4455,,,67123-50503
 X61962, Linear accelerator apparatus, Schlumberger Technology Corporation,PNG-CB,8294-50388,No data, 85 Duke Street ROMA QLD 4455, Throughout Queensland,,8294-50388
 X61963, Linear accelerator apparatus, Schlumberger Technology Corporation,PNG-CB,82596-43320,No data, 85 Duke Street ROMA QLD 4455, Throughout Queensland,,82596-43320
