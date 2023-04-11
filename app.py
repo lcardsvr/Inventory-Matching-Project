@@ -115,8 +115,6 @@ def welcome():
         f"<title>Project 03 - LCard</title>" 
         f"</head>"
         f"<h1>Project 03</h1>" 
-        # f'<img src="https://static.bc-edx.com/data/dla-1-2/m10/lms/img/surfs-up.jpg" alt=""/>'
-        # f"<br/>"
         f"<h2>Available Routes:</h2><br/>"
         f"<br/>"
         f"<ol>"
@@ -129,25 +127,10 @@ def welcome():
         f"<li>To get the Jsonified Calibration Compliance data :<br/>"
         f" <strong> /api/v1.0/calcomp</strong></li><br/>"
         f"<br/>"
-        # f"<li> Min, max, and average temperatures calculated from the given start date to the end of the dataset. Input format must be numbers separated by a hyphen following Year-MM-DD format:<br/>"
-        # f"<strong>  /api/v1.0/Year-MM-DD</strong></li><br/>"
-        # f"<br/>"
-        # f"<li>Min, max, and average temperatures calculated from the given start date to the given end date. Input format must be numbers separated by a hyphen following Year-MM-DD format:<br/>"
-        # f"<strong> /api/v1.0/Year-MM-DD/Year-MM-DD</strong></li><br/>"
-        # f"</ol>"
-        # f"<strong>For the queries data is available between 2010-01-01 and 2017-08-23</strong>"
-        
+
     )
 
 
-# @app.route("/")
-# def home():
-#     # people = Person.query.all()
-
-#     PhotoComp =photocomp()
-#     LeakTestComp = leaktestcomp()
-#     CalibrationComp = calcomp()
-#     return render_template("index.html", PhotoComp,LeakTestComp,CalibrationComp )
 
 
 @app.route("/api/v1.0/photocomp")
@@ -188,7 +171,7 @@ def photocomp():
     
     return response
     
-    # return jsonify(PhotoComp_data_out)
+
 
 
 
@@ -228,7 +211,7 @@ def leaktestcomp():
     
     return response
 
-    # return jsonify(LeakTestComp_data_out)
+
 
 
 
@@ -267,7 +250,6 @@ def calcomp():
     
     return response
 
-    # return jsonify(CalibrationComp_data_out)
 
 
 def getlat(country):
@@ -333,174 +315,6 @@ def getlon(country):
 
   if (country == 'Taiwan, Province Of China'):
     return TaiwanCoord[1]
-
-
-# @app.route("/api/v1.0/stations")
-# def stations():
-#     # Create our session (link) from Python to the DB
-#     session = Session(engine)
-
-#     # stations_grp= session.query(Measurement).group_by(Measurement.station).order_by(func.co).all()
-
-
-#     # stations_grp= session.query(Measurement,Station).\
-#     #     group_by(Measurement.station).\
-#     #     order_by(func.count(Measurement.station).desc()).\
-#     #     filter(Measurement.station == Station.station ).all()
-    
-#     # stations_grp= session.query(Station).\
-#     # group_by(Station.station).all()
-
-#     stations_grp= session.query(Station).\
-#     group_by(Station.station).all()
-
-#     session.close()
-
-#     # Create a dictionary from the row data and append to a list of all_passengers
-#     stations = []
-#     st =len(stations_grp)
-
-#     i=0 
-
-#     for row in stations_grp:
-#         station_dict = {}
-#         station_dict[f"Station {i+1}"] = row.station
-#         station_dict["Name"] = row.name
-#         station_dict["Latitude"] = row.latitude
-#         station_dict["Longitude"] = row.longitude
-#         station_dict["Elevation"] = row.elevation
-#         stations.append(station_dict)
-#         i = i+1
-
-#     return jsonify(stations)
-
-
-# @app.route("/api/v1.0/tobs")
-# def tobs():
-#     # Create our session (link) from Python to the DB
-#     session = Session(engine)
-
-#     query_date2 = dt.date(2017, 8,18 ) - dt.timedelta(days=365)
-#     print("Query Date: ", query_date2)
-
-#     temp_data = session.query(Measurement.date, Measurement.tobs).\
-#      filter(Measurement.date >= query_date2).\
-#      filter(Measurement.station == 'USC00519281' ).\
-#      order_by(Measurement.date).all()
-    
-#     session.close()
-    
-#     temp_data_out = []
-
-#     for date, tobs in temp_data:
-#         temp_dict = {}
-#         temp_dict["date"]=date
-#         temp_dict["tobs"]=tobs
-#         temp_data_out.append(temp_dict)
-
-#     return jsonify(temp_data_out)
-
-    
-
-
-# @app.route("/api/v1.0/<start>")
-# def start_only(start):
-
-   
-#     start_date = check_date (start)
-
-#     if start_date != False:
-       
-#        if start_date < dt.date(2010,1,1) or start_date > dt.date(2017,8,23):
-           
-#            return jsonify({"error": f"{start} is outside the available data. Data is available between 2010-01-01 and 2017-08-23 "}), 404
-       
-#        else:
-           
-#            query_date = start_date
-
-#     else:
-
-#         return jsonify({"error": f"{start} is not a valid date. Data is available between 2010-01-01 and 2017-08-23. Please check and try again"}), 404
-
-
-#     # query_date = dt.date(year, month,day)    
-
-#     # Create our session (link) from Python to the DB
-#     session = Session(engine)
-
-#     query_res = session.query(func.min(Measurement.tobs),func.max(Measurement.tobs),func.avg(Measurement.tobs)).\
-#     filter(Measurement.date >= query_date).all()
-
-#     session.close()
-
-
-#     temp_dict = {}
-
-#     temp_dict["Minimum Temperature - degC"] = query_res[0][0]
-#     temp_dict["Maximum Temperature - degC"] = query_res[0][1]
-#     temp_dict["Average Temperature - degC"] = query_res[0][2]
-
-
-#     return jsonify(temp_dict)
-
-
-# @app.route("/api/v1.0/<start>/<end>")
-# def all (start,end):
-
-
-#     start_date = check_date (start)
-
-#     end_date = check_date (end)
-
-
-#     if start_date == False or end_date == False:
-       
-#        return jsonify({"error": f"{start} is not a valid date. Data is available between 2010-01-01 and 2017-08-23. Please check and try again"}), 404
-    
-       
-#     elif start_date < dt.date(2010,1,1) or start_date > dt.date(2017,8,23):
-           
-#            return jsonify({"error": f"{start} is outside the available data. Data is available between 2010-01-01 and 2017-08-23 "}), 404
-    
-#     elif end_date < dt.date(2010,1,1) or end_date > dt.date(2017,8,23):
-           
-#            return jsonify({"error": f"{end} is outside the available data. Data is available between 2010-01-01 and 2017-08-23 "}), 404
-
-#     elif end_date<start_date:
-
-#         return jsonify({"error": f"{end} is greater than {start}. Data is available between 2010-01-01 and 2017-08-23. Please check and try again"}), 404
-       
-
-#     try: 
-#         delta = end_date - start_date
-        
-#         query_date = start_date + delta
-
-#     except:
-
-#         return jsonify({"error": f"Unexpected error: Start date: {start} / End date: {end}. Data is available between 2010-01-01 and 2017-08-23. Please check and try again."}), 404
-
-
- 
-#     # Create our session (link) from Python to the DB
-#     session = Session(engine)
-
-#     query_res = session.query(func.min(Measurement.tobs),func.max(Measurement.tobs),func.avg(Measurement.tobs)).\
-#     filter(Measurement.date >= start_date).\
-#     filter(Measurement.date <= end_date).all()
-
-#     session.close()
-
-
-#     temp_dict = {}
-
-#     temp_dict["Minimum Temperature - degC"] = query_res[0][0]
-#     temp_dict["Maximum Temperature - degC"] = query_res[0][1]
-#     temp_dict["Average Temperature - degC"] = query_res[0][2]
-
-
-#     return jsonify(temp_dict)
 
 
 
