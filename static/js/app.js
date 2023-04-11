@@ -18,6 +18,8 @@ function init() {
     console.log(data);
 
 
+    // Calling function to plot initial charts
+    
     preparedata(data);
 
     // Calling function to create the map
@@ -25,34 +27,17 @@ function init() {
     createMarkers(data);
 
 
-    // console.log(facilities)
-    // let samples = data.samples;
-    // let metadata = data.metadata;
+    //Function to fill the dropdown menu
 
     init_dropdown(names);
 
-    // console.log("Names: "+ names);
-    // console.log("Samples: " + samples);
 
-    // //Invoking functions to plot charts in the html- Initialization is done on the first element (id = 940)
-    // plotBarChart(samples[0]);
-
-    // plotBubbleChart(samples[0]);
-
-    // plotMetaData(metadata[0]);
-
-    // fillGaugeChart(metadata[0]);
-
-    // console.log(PhotoComp)
-
-    // PhotoComp =photocomp()
-    // LeakTestComp = leaktestcomp()
-    // CalibrationComp = calcomp()
 
   });
 }
 
 function preparedata(data){
+
 
 
   let geounits = new Set();
@@ -110,6 +95,9 @@ function preparedata(data){
   let criticalArray = [];
   let actionNeededArray = [];
 
+  let drilDownSeriesArray = [];
+  let drilDownSeriesArrayBL = [];
+
 
   facilities.forEach(f => {
 
@@ -133,6 +121,19 @@ function preparedata(data){
 
 
     }
+
+    let dataLoc= [];
+    let blComp= [];
+
+    let compPer = 0 ;
+
+    let actionNeededCount = 0;
+    let complianceCount = 0;
+    let criticalCount = 0;
+    let nonCompCount = 0;
+
+    let start = 0;
+
     data.forEach(element => {
 
 
@@ -174,12 +175,86 @@ function preparedata(data){
 
         facilitiesDict[f].lon = element.lon;
 
-      }
+
+      bussinessLine.forEach(buselement => {
+        
+
+        if (buselement == element.BusinessLine){
 
 
+          if(element.ComplianceIndicator === 'Action Needed'){
+            let dataPointL = element.BusinessLine +  ' - Action Needed';
+            let dataPointV = element.Count;
+            dataLoc.push([dataPointL,dataPointV]);
+            actionNeededCount +=element.Count;
+           }
+          if(element.ComplianceIndicator === 'Compliance'){
+            let dataPointL = element.BusinessLine +  ' - Compliance';
+            let dataPointV = element.Count;
+            dataLoc.push([dataPointL,dataPointV]);
+            complianceCount  +=element.Count;
+          }
+          if(element.ComplianceIndicator === 'Critical'){
+            let dataPointL = element.BusinessLine +  ' - Critical';
+            let dataPointV = element.Count;
+            dataLoc.push([dataPointL,dataPointV]);
+            criticalCount +=element.Count;          
+          }  
+          if(element.ComplianceIndicator === 'Ignore Case'){
+            let dataPointL = element.BusinessLine +  ' - Ignore Case';
+            let dataPointV = element.Count;
+            dataLoc.push([dataPointL,dataPointV]);
+          } 
+          if(element.ComplianceIndicator === 'Non Compliance'){
+            let dataPointL = element.BusinessLine +  ' - Non Compliance';
+            let dataPointV = element.Count;
+            dataLoc.push([dataPointL,dataPointV]);
+            nonCompCount +=element.Count;
+          }   
+          if(element.ComplianceIndicator === 'Not Applicable'){
+            let dataPointL = element.BusinessLine +  ' - Not Applicable';
+            let dataPointV = element.Count;
+            dataLoc.push([dataPointL,dataPointV]);
+          }
+          
+        }  
+        
 
+      });
+
+      let locComp = (actionNeededCount+complianceCount+criticalCount)/(actionNeededCount+complianceCount+criticalCount+nonCompCount)
+      let currentBL  = element.BusinessLine;
+      blComp.push([currentBL ,locComp])
+
+    }
 
     });
+
+    let drillDownElementName = f;
+    let drillDownElementid = f;
+
+    let drilldownElement = {
+      name : drillDownElementName,
+      id: drillDownElementid,
+      data: dataLoc
+    }    
+
+
+    let drillDownElementName02 = f;
+    let drillDownElementid02 = f;
+
+    let drilldownElement02 = {
+      name : drillDownElementName,
+      id: drillDownElementid,
+      data: blComp
+    }   
+
+    //Object with drill down information as required by HighCharts Drill Down JS
+    drilDownSeriesArray.push(drilldownElement);
+
+    //Array with drill down information as required by HighCharts Drill Down JS (Not used for display purposes)
+
+    drilDownSeriesArrayBL.push(drilldownElement02);
 
     complianceArray.push(parseInt(facilitiesDict[f].complianceCount));
     nonComplianceArray.push(parseInt(facilitiesDict[f].nonComplianceCount));
@@ -189,10 +264,16 @@ function preparedata(data){
 
   });
 
+
+  //Object with= information as required by HighCharts for the summary table
   let seriesData = [{ name: 'Compliance', data: complianceArray },
   { name: 'Action Needed', data: actionNeededArray },
   { name: 'Critical', data: criticalArray },
   { name: 'Non Compliance', data: nonComplianceArray }];
+
+  console.log(drilDownSeriesArray);
+
+  console.log(drilDownSeriesArrayBL);
 
 
 
@@ -203,279 +284,48 @@ function preparedata(data){
 
   let performerArray = performerMaker(facilitiesArray, percentageCompArrray);
 
-  // let drillDownSeriesTest = drillDownSeries(facilitiesArray, data);
+  console.log(facilitiesArray);
 
   console.log(percentageCompArrray);
 
   console.log(performerArray);
 
-  // let percentSorted = percentageCompArrray;
-
-  // percentSorted.sort((a,b) => b-a);
-
-  // console.log(percentSorted);
 
 
   console.log(mainSeriesTest);
 
 
 
-
   console.log(seriesData);
-
-  // console.log(latlonDict);
-
-  // console.log(latlonDict.China);
-
-  let locations = Object.keys(facilitiesDict);
-
-  let locInfo = Object.values(facilitiesDict);
-
-
 
 
   console.log(facilitiesDict);
 
 
-  //Info for the summary chart
-  let chartTitle = compStatusArray[0];
 
-  let xaxisLabel = bussinessLineArray[bussinessLineArray.length - 1];
+
+  let chartTitle = "Snapshot of compliance per location";
+
+  let xaxisLabel = "Assets";
 
 
   let catArray = facilitiesArray;
 
 
-  let drillDownSeries = [
-    {
-      name: 'Chrome',
-      id: 'Chrome',
-      data: [
-        [
-          'v65.0',
-          0.1
-        ],
-        [
-          'v64.0',
-          1.3
-        ],
-        [
-          'v63.0',
-          53.02
-        ],
-        [
-          'v62.0',
-          1.4
-        ],
-        [
-          'v61.0',
-          0.88
-        ],
-        [
-          'v60.0',
-          0.56
-        ],
-        [
-          'v59.0',
-          0.45
-        ],
-        [
-          'v58.0',
-          0.49
-        ],
-        [
-          'v57.0',
-          0.32
-        ],
-        [
-          'v56.0',
-          0.29
-        ],
-        [
-          'v55.0',
-          0.79
-        ],
-        [
-          'v54.0',
-          0.18
-        ],
-        [
-          'v51.0',
-          0.13
-        ],
-        [
-          'v49.0',
-          2.16
-        ],
-        [
-          'v48.0',
-          0.13
-        ],
-        [
-          'v47.0',
-          0.11
-        ],
-        [
-          'v43.0',
-          0.17
-        ],
-        [
-          'v29.0',
-          0.26
-        ]
-      ]
-    },
-    {
-      name: 'Firefox',
-      id: 'Firefox',
-      data: [
-        [
-          'v58.0',
-          1.02
-        ],
-        [
-          'v57.0',
-          7.36
-        ],
-        [
-          'v56.0',
-          0.35
-        ],
-        [
-          'v55.0',
-          0.11
-        ],
-        [
-          'v54.0',
-          0.1
-        ],
-        [
-          'v52.0',
-          0.95
-        ],
-        [
-          'v51.0',
-          0.15
-        ],
-        [
-          'v50.0',
-          0.1
-        ],
-        [
-          'v48.0',
-          0.31
-        ],
-        [
-          'v47.0',
-          0.12
-        ]
-      ]
-    },
-    {
-      name: 'Internet Explorer',
-      id: 'Internet Explorer',
-      data: [
-        [
-          'v11.0',
-          6.2
-        ],
-        [
-          'v10.0',
-          0.29
-        ],
-        [
-          'v9.0',
-          0.27
-        ],
-        [
-          'v8.0',
-          0.47
-        ]
-      ]
-    },
-    {
-      name: 'Safari',
-      id: 'Safari',
-      data: [
-        [
-          'v11.0',
-          3.39
-        ],
-        [
-          'v10.1',
-          0.96
-        ],
-        [
-          'v10.0',
-          0.36
-        ],
-        [
-          'v9.1',
-          0.54
-        ],
-        [
-          'v9.0',
-          0.13
-        ],
-        [
-          'v5.1',
-          0.2
-        ]
-      ]
-    },
-    {
-      name: 'Edge',
-      id: 'Edge',
-      data: [
-        [
-          'v16',
-          2.6
-        ],
-        [
-          'v15',
-          0.92
-        ],
-        [
-          'v14',
-          0.4
-        ],
-        [
-          'v13',
-          0.1
-        ]
-      ]
-    },
-    {
-      name: 'Opera',
-      id: 'Opera',
-      data: [
-        [
-          'v50.0',
-          0.96
-        ],
-        [
-          'v49.0',
-          0.82
-        ],
-        [
-          'v12.1',
-          0.14
-        ]
-      ]
-    }
-  ];
-
     //Call summary chart
 
     sumChart(chartTitle, catArray, xaxisLabel, seriesData);
 
-    // Call drilldown chart
+    // // Call drilldown chart
 
-    drillDownChart(mainSeriesTest, drillDownSeries);
+    drillDownChart(mainSeriesTest, drilDownSeriesArray);
 
-    //
+    // Summary first locations
 
-    plotMetaData(facilitiesArray, percentageCompArrray) 
+    plotMetaData(facilitiesArray, percentageCompArrray); 
+
+
+
 
 }
 
@@ -600,21 +450,13 @@ function plotBubbleChart(samples) {
 
 function plotMetaData(facilitiesArray, percentageCompArrray) {
 
-  // // Create an array of category labels
-  // let dataLabels = Object.keys(metadata);
-  // // Create an array with Metadata Values
-  // let dataValues = Object.values(metadata);
-
-
-  // console.log("Labels " + dataLabels);
-  // console.log("values " + dataValues);
 
 
   // Clear previous contents
   d3.select("#sample-metadata").html("");
 
 
-  // There are 7 properties in the metadata. Writing The keys and Values in the HTML
+  // Plotting just 5 locations for Information.  Writing The keys and Values in the HTML
 
   for (let i = 0; i < 5; i++) {
 
@@ -654,7 +496,6 @@ function optionChanged() {
   // Assign the value of the dropdown menu option to a variable the metadata id and sample id
   let dataset = dropdownMenu.property("value");
 
-  // let url = "http://127.0.0.1:5000/api/v1.0/leaktestcomp";
 
   let urlArray = ["http://127.0.0.1:5000/api/v1.0/photocomp", "http://127.0.0.1:5000/api/v1.0/leaktestcomp", "http://127.0.0.1:5000/api/v1.0/calcomp"];
 
@@ -667,24 +508,13 @@ function optionChanged() {
   let data = d3.json(url).then(function (data) {
     console.log(data);
 
+    // Function to rearrange plots
+
     preparedata(data);
 
     // Calling function to create the map
 
-    // myMap.off();
-    // myMap.remove();
-
     createMarkers2(data);
-    // createMarkers(data);
-
-
-    // plotBarChart(samples[dataset]);
-
-    // plotBubbleChart(samples[dataset]);
-
-    // plotMetaData(metadata[dataset]);
-
-    // fillGaugeChart(metadata[dataset]);
 
   });
 
@@ -692,66 +522,6 @@ function optionChanged() {
 }
 
 init();
-
-
-//Function to generate teh Gauge Chart
-function fillGaugeChart(metadata) {
-
-  // Create an array of category labels
-  let dataLabels = Object.keys(metadata);
-
-
-  // Create an array with Metadata Values
-  let dataValues = Object.values(metadata);
-
-
-  console.log("Labels " + dataLabels);
-
-  console.log("values " + dataValues);
-
-
-  let washingFrequency = dataValues[6];
-
-  // Set up the trace for the gauge chart
-  //Colors taken from https://learn.microsoft.com/en-us/power-platform/power-fx/reference/function-colors
-  let trace = {
-    value: washingFrequency,
-    domain: { x: [0, 1], y: [0, 1] },
-    title: {
-      text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week",
-      // font: {color: "black", size: 16}
-      font: { color: "black" }
-    },
-    type: "indicator",
-    mode: "gauge+number",
-    gauge: {
-      axis: { range: [0, 9], tickmode: "linear", tick0: 1, dtick: 1 },
-      steps: [
-        { range: [0, 1], color: "rgba(240, 248, 255, 1)" },
-        { range: [1, 2], color: "rgba( 250, 235, 215, 1 )" },
-        { range: [2, 3], color: "rgba( 250, 235, 215, 1 )" },
-        { range: [3, 4], color: "rgba(250, 250, 210, 1)" },
-        { range: [4, 5], color: "rgba(211, 211, 211, 1)" },
-        { range: [5, 6], color: "rgba(102, 205, 170, 1 )" },
-        { range: [6, 7], color: "rgba(0, 250, 154, 1 )" },
-        { range: [7, 8], color: "rgba( 60, 179, 113, 1)" },
-        { range: [8, 9], color: "rgba(107, 142, 35, 1)" },
-
-      ]
-    }
-  };
-
-  // Set up the Layout
-  let layout = {
-    width: 400,
-    height: 400,
-    margin: { t: 0, b: 0 }
-  };
-
-  // Call Plotly to plot the gauge chart
-  Plotly.newPlot("gauge", [trace], layout)
-
-};
 
 
 function createMarkers(response) {
@@ -768,8 +538,8 @@ function createMarkers(response) {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(myMap);
 
-  // Pull the "stations" property from response.data.
-  // let stations = response.data.stations;
+  // creating variable with the response
+
   let stations = response;
 
 
@@ -781,7 +551,7 @@ function createMarkers(response) {
     let station = stations[index];
 
 
-    // For each station, create a marker, and bind a popup with the station's name.
+    // For each station, create a marker, and bind a popup with the station's details
     markers.addLayer(L.marker([station.lat, station.lon])
       .bindPopup("<h3>" + station.FacilityNamewithFacilityID + "<h3><h3>Compliance Indicator: " + station.ComplianceIndicator + "<h3><h3>Business Line: " + station.BusinessLine + "<h3><h3>Count: " + station.Count + "</h3>"));
 
@@ -794,7 +564,7 @@ function createMarkers(response) {
 
 function createMarkers2(response) {
   
-  // document.getElementById('bar').innerHTML = "<div id='bar' style='height: 400px;;'></div>";
+
 
   // myMap.off();
   // myMap.remove();
@@ -922,11 +692,11 @@ function drillDownChart(mainSeriesTest, drillDownSeries) {
     },
     title: {
       align: 'left',
-      text: 'Browser market shares. January, 2022'
+      text: 'Compliance Information'
     },
     subtitle: {
       align: 'left',
-      text: 'Click the columns to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+      text: 'Click the columns to view Business Line Drilled Down Data.</a>'
     },
     accessibility: {
       announceNewData: {
@@ -938,7 +708,7 @@ function drillDownChart(mainSeriesTest, drillDownSeries) {
     },
     yAxis: {
       title: {
-        text: 'Total percent market share'
+        text: '<br> % Compliance / Ind. quantities<br/>'
       }
 
     },
@@ -950,7 +720,7 @@ function drillDownChart(mainSeriesTest, drillDownSeries) {
         borderWidth: 0,
         dataLabels: {
           enabled: true,
-          format: '{point.y:.1f}%'
+          format: '{point.y:.1f}'
         }
       }
     },
@@ -967,11 +737,17 @@ function drillDownChart(mainSeriesTest, drillDownSeries) {
           align: 'right'
         }
       },
+      
       series: drillDownSeries
     }
+
+
+
   });
 
 }
+
+
 
 function performerMaker(facilitiesArray, percentageCompArrray){
 
@@ -995,71 +771,5 @@ function performerMaker(facilitiesArray, percentageCompArrray){
 
   return sortable;
 }
-
-
-// function drillDownSeries(facilitiesArray, data) {
-
-//   let bussinessLine = new Set();
-
-//   data.forEach(element => {
-
-//     bussinessLine.add(element.BusinessLine
-//     );
-
-//   });
-
-//   let bussinessLineArray = Array.from(bussinessLine);
-
-
-//   let CompIndicator = new Set();
-
-//   data.forEach(element => {
-
-//     CompIndicator.add(element.ComplianceIndicator
-//     );
-
-//   });
-
-//   let CompIndicatorArray = Array.from(CompIndicator);
-
-
-
-
-//   for (i = 0; i < facilitiesArray.length; i++) {
-
-//     let location = facilitiesArray[i];
-
-//     for (l = 0; l < data.length; l++) {
-
-//       if (data{l}.FacilityNamewithFacilityID == location) {
-
-//         for (j = 0; j < bussinessLineArray.length; j++) {
-
-//           if (bussinessLineArray[j] == data{ l }.BusinessLine) {
-
-
-//             for (k = 0; k < CompIndicatorArray.length; k++) {
-
-//               if (CompIndicatorArray[k] =){}
-
-
-
-//             }
-
-
-//           }
-
-//         }
-
-
-
-
-//       }
-
-
-//     }
-
-//   )
-
 
 
